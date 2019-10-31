@@ -12,3 +12,12 @@ body {
     background-size: 26px;
     background-position: 97%;
 }
+
+.movie-caption {
+    background-color: #000;
+    opacity: .7;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    text-align: left;
+}
