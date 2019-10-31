@@ -21,3 +21,9 @@ body {
     padding: 20px;
     text-align: left;
 }
+
+@media only screen and (min-width: 992px) {
+    .search-form {
+        margin-top: 25px;
+    }
+}
