@@ -4,3 +4,11 @@ body {
 
 /* .container {} */
 
+#searchbox {
+    position: relative;
+    overflow: hidden;
+    background-image: url('../images/search-light.png');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: 97%;
+}
