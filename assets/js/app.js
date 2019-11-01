@@ -31,8 +31,7 @@ $(document).ready(function () {
         let results = _data.results;
         for (let element in results) {
             allPosters = results[element].poster_path;
-            // console.log(imgDb + allPosters)
-
+            console.log(imgDb + allPosters);
         }
     });
 })
