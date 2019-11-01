@@ -40,8 +40,6 @@ main img {
     margin-bottom: 20px;
 }
 
-
-
 /* 
     screen-size -> 436px / 437px 
     screen-size-max -> 1300
@@ -50,15 +48,10 @@ main img {
 @media only screen and (min-width: 437px) {
     .logo {
         font-size: 60px;
-    }
-}
-
-@media only screen and (max-width: 375) {
-   /*  */
-}
 
 @media only screen and (min-width: 992px) {
-    .logo {
-        font-size: 60px;
+    header {
+        text-align: left;
+
     }
 }
