@@ -1,0 +1,51 @@
+body {
+    background-color: #333;
+}
+
+/* .container {} */
+
+.logo {
+    color: #facf63;
+}
+
+#searchbox {
+    position: relative;
+    overflow: hidden;
+    background-image: url('../images/search-light.png');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: 97%;
+}
+
+.movie-caption {
+    background-color: #000;
+    opacity: .7;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    text-align: left;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+@media only screen and (min-width: 992px) {
+    header {
+        text-align: left;
+    }
+
+    .search-form {
+        margin-top: 25px;
+    }
+}
