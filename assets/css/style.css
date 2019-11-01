@@ -6,6 +6,7 @@ body {
 
 .logo {
     color: #facf63;
+    font-size: 40px;
 }
 
 #searchbox {
@@ -15,6 +16,7 @@ body {
     background-repeat: no-repeat;
     background-size: 26px;
     background-position: 97%;
+    margin-bottom: 20px;;
 }
 
 .movie-caption {
@@ -26,12 +28,39 @@ body {
     text-align: left;
 }
 
-@media only screen and (min-width: 992px) {
-    header {
-        text-align: left;
-    }
+/* .slider {} */
 
-    .search-form {
-        margin-top: 25px;
+main {
+    margin: 20px 0;
+    text-align: center;
+}
+
+main img {
+    /* width: 100%; */
+    margin-bottom: 20px;
+}
+
+
+
+/* 
+    screen-size -> 436px / 437px 
+    screen-size-max -> 1300
+*/
+
+@media only screen and (min-width: 437px) {
+    .logo {
+        font-size: 60px;
+    }
+}
+
+@media only screen and (max-width: 375) {
+    main img {
+
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .logo {
+        font-size: 60px;
     }
 }
