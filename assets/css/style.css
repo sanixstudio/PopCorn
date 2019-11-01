@@ -54,9 +54,7 @@ main img {
 }
 
 @media only screen and (max-width: 375) {
-    main img {
-
-    }
+   /*  */
 }
 
 @media only screen and (min-width: 992px) {
