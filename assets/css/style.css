@@ -6,6 +6,7 @@ body {
 
 .logo {
     color: #facf63;
+    font-size: 40px;
 }
 
 #searchbox {
@@ -15,6 +16,7 @@ body {
     background-repeat: no-repeat;
     background-size: 26px;
     background-position: 97%;
+    margin-bottom: 20px;;
 }
 
 .movie-caption {
@@ -26,26 +28,30 @@ body {
     text-align: left;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
-    padding: 10px;
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
+/* .slider {} */
+
+main {
+    margin: 20px 0;
     text-align: center;
-  }
+}
+
+main img {
+    /* width: 100%; */
+    margin-bottom: 20px;
+}
+
+/* 
+    screen-size -> 436px / 437px 
+    screen-size-max -> 1300
+*/
+
+@media only screen and (min-width: 437px) {
+    .logo {
+        font-size: 60px;
 
 @media only screen and (min-width: 992px) {
     header {
         text-align: left;
-    }
 
-    .search-form {
-        margin-top: 25px;
     }
 }
