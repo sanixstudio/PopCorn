@@ -1,5 +1,10 @@
 body {
-    background-color: #2b2e31;
+    background-color: #212324;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* .container {} */
@@ -40,6 +45,10 @@ main img {
     margin-bottom: 20px;
 }
 
+.cat-title {
+    color: #aaa;
+}
+
 /* 
     screen-size -> 436px / 437px 
     screen-size-max -> 1300
@@ -48,6 +57,14 @@ main img {
 @media only screen and (min-width: 437px) {
     .logo {
         font-size: 60px;
+    }
+}
+
+@media only screen and (min-width: 476px) {
+    .col-xl-2 {
+        width: 185px;
+    }
+}
 
 @media only screen and (min-width: 992px) {
     header {
