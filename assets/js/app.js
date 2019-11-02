@@ -1,25 +1,44 @@
 $(document).ready(function () {
 
-    // var firebaseConfig = {
-    //     apiKey: "AIzaSyAPnI-UqekgQQuml3FsSyriamX1SaW935c",
-    //     authDomain: "ucb-2019.firebaseapp.com",
-    //     databaseURL: "https://ucb-2019.firebaseio.com",
-    //     projectId: "ucb-2019",
-    //     storageBucket: "ucb-2019.appspot.com",
-    //     messagingSenderId: "245660783375",
-    //     appId: "1:245660783375:web:e95bee3f6eb0d0071a247a"
-    // };
-    // // Initialize Firebase
-    // firebase.initializeApp(firebaseConfig);
-    // const db = firebase.database();
+    // code test area ----------------------------------------------------------
+    let clickedBro = [];
 
-    // db.ref().on('value', function (snap) {
-    //     console.log(snap.val().movies);
-    // });
+    $(document).on('click', '#logoRating', function () {
+
+        clickedBro.push($(document.querySelector("#logoRating")))
+        console.log($(document.querySelector("#logoRating")))
+    })
+    // -----------------------------------------------------------------------------------
+
+
+
+    //  Firebase data info 
+    var firebaseConfig = {
+        apiKey: "AIzaSyBl3V6CpqPAg1IgJjkyypLhqDhWERQeSuA",
+        authDomain: "popcorn-e62a5.firebaseapp.com",
+        databaseURL: "https://popcorn-e62a5.firebaseio.com",
+        projectId: "popcorn-e62a5",
+        storageBucket: "popcorn-e62a5.appspot.com",
+        messagingSenderId: "377613950671",
+        appId: "1:377613950671:web:890c3f4dd96ea206da21ba"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    db.ref().set('value', snap => {
+
+
+    })
+
+    db.ref().on('value', function (snap) {
+        console.log(snap.val().movies);
+    });
+
 
 
     // const apiKey;
-    const apiKey = "22e7c1bb96e31278c7328fa9a52b5bad";
+    const apiKey = "f3f124a7e3af05d748ddcefe10f25cb0";
     const imgDb = "http://image.tmdb.org/t/p/w185/";
     const urlUpcomingMovies = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=${apiKey}`;
     const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&api_key=${apiKey}`;
@@ -43,6 +62,7 @@ $(document).ready(function () {
 
                 let posterImg = `<div>
                     <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                    <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
                     </div>`;
                 $('#upcomingMovies').append(posterImg);
             }
@@ -60,10 +80,13 @@ $(document).ready(function () {
                 console.log(imgDb + allPosters);
 
                 let posterImg = `<div>
-                        <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
-                        <div class="text">Hi</div>
+                        <img class="img-fluid posters img-thumbnail" src="${imgDb + allPosters}" alt="">
+                        <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
                         </div>`;
                 $('#playingNow').append(posterImg);
+
+
+
             }
         });
     }
@@ -80,6 +103,7 @@ $(document).ready(function () {
 
                 let posterImg = `<div>
                         <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                        <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
                         </div>`;
                 $('#topRated').append(posterImg);
             }
