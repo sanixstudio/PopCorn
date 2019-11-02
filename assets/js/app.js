@@ -61,7 +61,6 @@ $(document).ready(function () {
 
                 let posterImg = `<div>
                         <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
-                        <div class="text">Hi</div>
                         </div>`;
                 $('#playingNow').append(posterImg);
             }
@@ -85,5 +84,15 @@ $(document).ready(function () {
             }
         });
     }
+
+    $('.img-fluid').on('click', function () {
+        let btnclick = $('<h1>Hi</h1>')
+        $('.images-container').append(btnclick);
+        console.log(btnclick);
+
+
+
+
+    });
 
 });
