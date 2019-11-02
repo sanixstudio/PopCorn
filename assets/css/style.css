@@ -21,7 +21,8 @@ body {
     background-repeat: no-repeat;
     background-size: 26px;
     background-position: 97%;
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 .movie-caption {
