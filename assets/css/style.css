@@ -111,6 +111,11 @@ main img {
       z-index: 100;
   }
 
+  .sub-nav li {
+      margin-bottom: 5px;
+      padding: 0 10px;
+  }
+
   .sub-nav a {
       color: #aaa;
   }
