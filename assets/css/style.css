@@ -1,11 +1,17 @@
 body {
-    background-color: #333;
+    background-color: #212324;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* .container {} */
 
 .logo {
     color: #facf63;
+    font-size: 40px;
 }
 
 #searchbox {
@@ -15,6 +21,8 @@ body {
     background-repeat: no-repeat;
     background-size: 26px;
     background-position: 97%;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 .movie-caption {
@@ -26,26 +34,82 @@ body {
     text-align: left;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
-    padding: 10px;
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
+/* .slider {} */
+
+main {
+    margin: 20px 0;
     text-align: center;
+}
+
+main img {
+    /* width: 100%; */
+    margin-bottom: 20px;
+}
+
+.cat-title {
+    color: #facf63;
+    box-shadow: 0 0 10px #000;
+    margin-top: 40px;
+    margin-bottom: -20px;;
+    padding: 20px 10px 20px 20px;
+    border-radius: 10px 10px 0 0;
+    width: auto;
+    border-bottom: solid 1px #212324;
+}
+
+.images-container {
+    display: flex;
+    flex-flow: wrap;
+    text-align: center;
+    /* box-shadow: 0 0 10px #000; */
+}
+
+.images-container div {
+    font-size: 0;
+    flex: 0 1 calc(100%4);
+    margin: 0 0px;
+}
+
+.images-container div img {
+    height: auto;
+    width: 90%;
   }
 
-@media only screen and (min-width: 992px) {
-    header {
-        text-align: left;
-    }
+/* 
+    screen-size -> 436px / 437px 
+    screen-size-max -> 1300
+*/
 
-    .search-form {
-        margin-top: 25px;
+@media only screen and (min-width: 437px) {
+    .logo {
+        font-size: 60px;
     }
 }
+
+@media only screen and (min-width: 992px) {
+    header { text-align: left; }
+}
+
+@media only screen and (min-width: 240px) {
+    .images-container div { flex: 0 1 calc(100%/2); }
+  }
+  
+  @media only screen and (min-width: 480px) {
+    .images-container div { flex: 0 1 calc(100%/3); }
+  }
+  
+  @media only screen and (min-width: 720px) {
+    .images-container div { flex: 0 1 calc(100%/4); }
+  }
+  
+  @media only screen and (min-width: 960px) {
+    .images-container div { flex: 0 1 calc(100%/5); }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .images-container div { flex: 0 1 calc(100%/6); }
+  }
+  
+  @media only screen and (min-width: 1440px) {
+    .images-container div { flex: 0 1 calc(100%/7); }
+  }

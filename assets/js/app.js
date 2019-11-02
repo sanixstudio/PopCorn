@@ -1,26 +1,97 @@
 $(document).ready(function () {
-    const apiKey = 'f3f124a7e3af05d748ddcefe10f25cb0';
 
-    //  latest url
-    let latestUrl = 'https://api.themoviedb.org/3/movie/latest?api_key=' + apiKey + '&language=en-US';
-    // Upcoming url
-    let upcomingUrl = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + apiKey + '&language=en-US&page=10';
-    // top rated
-    let topRatedUrl = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + apiKey + '&language=en-US&page=1';
-    // popular
-    let popularUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=' + apiKey + '&language=en-US&page=1';
-    // now playing
-    let nowPlayingUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + apiKey + '&language=en-US&page=1';
 
-    $.ajax({
-        url: 'https://api.themoviedb.org/3/movie/555?api_key=' + apiKey,
-        method: 'GET',
-        dataType: 'json'
-    }).then(data => {
 
-        console.log(data)
+    //  Firebase data info 
+    var firebaseConfig = {
+        apiKey: "AIzaSyBl3V6CpqPAg1IgJjkyypLhqDhWERQeSuA",
+        authDomain: "popcorn-e62a5.firebaseapp.com",
+        databaseURL: "https://popcorn-e62a5.firebaseio.com",
+        projectId: "popcorn-e62a5",
+        storageBucket: "popcorn-e62a5.appspot.com",
+        messagingSenderId: "377613950671",
+        appId: "1:377613950671:web:890c3f4dd96ea206da21ba"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
 
+    db.ref().set('value', snap => {
+
+
+    })
+
+    db.ref().on('value', function (snap) {
+        console.log(snap.val().movies);
     });
-})
 
 
+
+    // const apiKey;
+    const apiKey = "f3f124a7e3af05d748ddcefe10f25cb0";
+    const imgDb = "http://image.tmdb.org/t/p/w185/";
+    const urlUpcomingMovies = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=${apiKey}`;
+    const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&api_key=${apiKey}`;
+    const urlTopRatedMovies = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=${apiKey}`;
+
+    let count = 0;
+
+    getUpcomingMovies();
+    getPlayingNow();
+    getTopRatedMovies();
+
+    function getUpcomingMovies() {
+        $.ajax({
+            url: urlUpcomingMovies,
+            method: 'GET'
+        }).then(function (_data) {
+            let results = _data.results;
+            for (let element in results) {
+                allPosters = results[element].poster_path;
+                // console.log(imgDb + allPosters);
+
+                let posterImg = `<div>
+                    <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                    </div>`;
+                $('#upcomingMovies').append(posterImg);
+            }
+        });
+    }
+
+    function getPlayingNow() {
+        $.ajax({
+            url: urlNowPlaying,
+            method: 'GET'
+        }).then(function (_data) {
+            let results = _data.results;
+            for (let element in results) {
+                allPosters = results[element].poster_path;
+                console.log(imgDb + allPosters);
+
+                let posterImg = `<div>
+                        <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                        </div>`;
+                $('#playingNow').append(posterImg);
+            }
+        });
+    }
+
+    function getTopRatedMovies() {
+        $.ajax({
+            url: urlTopRatedMovies,
+            method: 'GET'
+        }).then(function (_data) {
+            let results = _data.results;
+            for (let element in results) {
+                allPosters = results[element].poster_path;
+                console.log(imgDb + allPosters);
+
+                let posterImg = `<div>
+                        <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                        </div>`;
+                $('#topRated').append(posterImg);
+            }
+        });
+    }
+
+});
