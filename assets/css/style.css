@@ -7,13 +7,6 @@ body {
     margin: 0 auto;
 }
 
-/* .container {} */
-
-.logo {
-    color: #facf63;
-    font-size: 40px;
-}
-
 #searchbox {
     position: relative;
     overflow: hidden;
