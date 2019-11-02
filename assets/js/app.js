@@ -32,6 +32,11 @@ $(document).ready(function () {
         for (let element in results) {
             allPosters = results[element].poster_path;
             console.log(imgDb + allPosters);
+
+            let posterImg = `<div>
+                <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                </div>`;
+            $('.images-container').append(posterImg);
         }
     });
 })
