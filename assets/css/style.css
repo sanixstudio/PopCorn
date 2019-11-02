@@ -72,7 +72,18 @@ main img {
 
 .images-container div img {
     height: auto;
+    position: relative;
     width: 90%;
+    cursor: pointer;
+  }
+
+  .details-container {
+      /* display: hidden; */
+      position: absolute;
+  }
+
+  .images-container div img:hover > .details-container {
+      display: visible;
   }
 
 /* 

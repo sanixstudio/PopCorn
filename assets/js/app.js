@@ -30,6 +30,7 @@ $(document).ready(function () {
     getUpcomingMovies();
     getPlayingNow();
     getTopRatedMovies();
+    getPlayingNowMovieDetails();
 
     function getUpcomingMovies() {
         $.ajax({
@@ -56,13 +57,28 @@ $(document).ready(function () {
         }).then(function (_data) {
             let results = _data.results;
             for (let element in results) {
+
                 allPosters = results[element].poster_path;
-                console.log(imgDb + allPosters);
+                let movieTitle = results[element].original_title;
+                let ratings = results[element].vote_average
+                // console.log(imgDb + allPosters);
 
                 let posterImg = `<div>
-                        <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
-                        </div>`;
+                                    <img class="img-fluid img-thumbnail" 
+                                    src="${imgDb + allPosters}" alt="">
+                                 </div>`;
+
                 $('#playingNow').append(posterImg);
+
+
+                let detailsContainer = $(`<div class="details-container">
+                                        <span>Title: ${movieTitle}</span>
+                                        <span>IMDB Rating: ${ratings}</span>
+                                        <span>: ${ratings}</span>
+                                        <span>Popularity: ${releaseDate}</span>
+                                        <span>Popularity: ${synopsis}</span>
+                                    </div>`);
+                $('.images-container div img').append(detailsContainer);
             }
         });
     }
@@ -75,7 +91,7 @@ $(document).ready(function () {
             let results = _data.results;
             for (let element in results) {
                 allPosters = results[element].poster_path;
-                console.log(imgDb + allPosters);
+                // console.log(imgDb + allPosters);
 
                 let posterImg = `<div>
                         <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
@@ -84,5 +100,6 @@ $(document).ready(function () {
             }
         });
     }
+
 
 });
