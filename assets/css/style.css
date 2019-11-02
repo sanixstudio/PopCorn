@@ -91,7 +91,7 @@ main img {
 .images-container div img {
     height: auto;
     width: 90%;
-  }
+}
 
 /* 
     screen-size -> 436px / 437px 
@@ -105,29 +105,47 @@ main img {
 }
 
 @media only screen and (min-width: 992px) {
-    header { text-align: left; }
+    header {
+        text-align: left;
+    }
+
+    #searchbox {
+        margin-top: 40px;
+    }
 }
 
 @media only screen and (min-width: 240px) {
-    .images-container div { flex: 0 1 calc(100%/2); }
-  }
-  
-  @media only screen and (min-width: 480px) {
-    .images-container div { flex: 0 1 calc(100%/3); }
-  }
-  
-  @media only screen and (min-width: 720px) {
-    .images-container div { flex: 0 1 calc(100%/4); }
-  }
-  
-  @media only screen and (min-width: 960px) {
-    .images-container div { flex: 0 1 calc(100%/5); }
-  }
-  
-  @media only screen and (min-width: 1200px) {
-    .images-container div { flex: 0 1 calc(100%/6); }
-  }
-  
-  @media only screen and (min-width: 1440px) {
-    .images-container div { flex: 0 1 calc(100%/7); }
-  }
+    .images-container div {
+        flex: 0 1 calc(100%/2);
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .images-container div {
+        flex: 0 1 calc(100%/3);
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    .images-container div {
+        flex: 0 1 calc(100%/4);
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .images-container div {
+        flex: 0 1 calc(100%/5);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .images-container div {
+        flex: 0 1 calc(100%/6);
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .images-container div {
+        flex: 0 1 calc(100%/7);
+    }
+}
