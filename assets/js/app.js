@@ -70,6 +70,7 @@ $(document).ready(function () {
 
                 let posterImg = `<div>
                         <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                        <div class="text">Hi</div>
                         </div>`;
                 $('#playingNow').append(posterImg);
             }

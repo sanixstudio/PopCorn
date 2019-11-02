@@ -7,22 +7,15 @@ body {
     margin: 0 auto;
 }
 
-/* .container {} */
-
-.logo {
-    color: #facf63;
-    font-size: 40px;
-}
-
 #searchbox {
     position: relative;
     overflow: hidden;
     background-image: url('../images/search-light.png');
     background-repeat: no-repeat;
     background-size: 26px;
+    color: #777;
     background-position: 97%;
-    margin-bottom: 20px;
-    margin-top: 40px;
+    margin-bottom: 20px;;
 }
 
 .movie-caption {
@@ -47,21 +40,13 @@ main img {
 }
 
 .cat-title {
-    color: #facf63;
-    box-shadow: 0 0 10px #000;
-    margin-top: 40px;
-    margin-bottom: -20px;;
-    padding: 20px 10px 20px 20px;
-    border-radius: 10px 10px 0 0;
-    width: auto;
-    border-bottom: solid 1px #212324;
+    color: #aaa;
 }
 
 .images-container {
     display: flex;
     flex-flow: wrap;
     text-align: center;
-    /* box-shadow: 0 0 10px #000; */
 }
 
 .images-container div {
@@ -87,7 +72,13 @@ main img {
 }
 
 @media only screen and (min-width: 992px) {
-    header { text-align: left; }
+    header { 
+        text-align: left; 
+    }
+    
+    #searchbox {
+        margin-top: 40px;
+    }
 }
 
 @media only screen and (min-width: 240px) {
