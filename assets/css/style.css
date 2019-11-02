@@ -20,6 +20,7 @@ body {
     background-image: url('../images/search-light.png');
     background-repeat: no-repeat;
     background-size: 26px;
+    color: #777;
     background-position: 97%;
     margin-bottom: 20px;
     margin-top: 40px;
@@ -96,9 +97,9 @@ main img {
 }
 
 @media only screen and (min-width: 992px) {
-    header {
-        text-align: left;
-    }
+    header { text-align: left; }
+    #searchbox {
+        margin-top: 40px;
 }
 
 @media only screen and (min-width: 240px) {
