@@ -52,6 +52,27 @@ body {
     text-align: left;
 }
 
+.sub-menu {
+    visibility: hidden;
+    /* display: none; */
+    position: absolute;
+    z-index: 11;
+    list-style: none;
+    padding: 0 20px 10px 20px;
+    background-color: #1b170d;
+}
+
+.genre {
+    position: relative;
+}
+
+.genre:hover> .sub-menu {
+    visibility: visible;
+    /* display: unset; */
+}
+
+
+
 /* .slider {} */
 
 main {
@@ -90,6 +111,7 @@ main img {
 
 .images-container div img {
     height: auto;
+    position: relative;
     width: 90%;
 }
 
