@@ -49,7 +49,7 @@ $(document).ready(function () {
     getUpcomingMovies();
     getPlayingNow();
     getTopRatedMovies();
-    getPlayingNowMovieDetails();
+    // getPlayingNowMovieDetails();
 
     function getUpcomingMovies() {
         $.ajax({
