@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    // code test area ----------------------------------------------------------
+    let clickedBro = [];
+
+    $(document).on('click', '#logoRating', function () {
+
+        clickedBro.push($(document.querySelector("#logoRating")))
+        console.log($(document.querySelector("#logoRating")))
+    })
+    // -----------------------------------------------------------------------------------
+
 
 
     //  Firebase data info 
@@ -53,6 +63,7 @@ $(document).ready(function () {
 
                 let posterImg = `<div>
                     <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                    <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
                     </div>`;
                 $('#upcomingMovies').append(posterImg);
             }
@@ -73,20 +84,12 @@ $(document).ready(function () {
                 // console.log(imgDb + allPosters);
 
                 let posterImg = `<div>
-                        <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
-                        <div class="text">Hi</div>
+                        <img class="img-fluid posters img-thumbnail" src="${imgDb + allPosters}" alt="">
+                        <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
                         </div>`;
                 $('#playingNow').append(posterImg);
 
 
-                let detailsContainer = $(`<div class="details-container">
-                                        <span>Title: ${movieTitle}</span>
-                                        <span>IMDB Rating: ${ratings}</span>
-                                        <span>: ${ratings}</span>
-                                        <span>Popularity: ${releaseDate}</span>
-                                        <span>Popularity: ${synopsis}</span>
-                                    </div>`);
-                $('.images-container div img').append(detailsContainer);
             }
         });
     }
@@ -103,15 +106,11 @@ $(document).ready(function () {
 
                 let posterImg = `<div>
                         <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                        <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
                         </div>`;
                 $('#topRated').append(posterImg);
             }
         });
     }
 
-<<<<<<< HEAD
-
 });
-=======
-});
->>>>>>> dc0bd6440da0f8f642a3eb530e29e7fd77c6b338

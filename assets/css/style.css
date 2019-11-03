@@ -2,9 +2,34 @@ body {
     background-color: #212324;
 }
 
+/* need to be placed in the right place */
+#logoRating{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    z-index: 10;
+    transform: translateX(-100%);
+    
+}
+
+
+/* need to be placed in the right place */
+.posters{
+    position: relative;
+    z-index: 1;
+}
+
+
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* .container {} */
+
+.logo {
+    color: #facf63;
+    font-size: 40px;
 }
 
 #searchbox {
@@ -13,10 +38,9 @@ body {
     background-image: url('../images/search-light.png');
     background-repeat: no-repeat;
     background-size: 26px;
-    color: #777;
     background-position: 97%;
     margin-bottom: 20px;
-    ;
+    margin-top: 40px;
 }
 
 .movie-caption {
@@ -62,11 +86,10 @@ main img {
 }
 
 .cat-title {
-    color: #1b170d;
+    color: #facf63;
     box-shadow: 0 0 10px #000;
     margin-top: 40px;
-    margin-bottom: -20px;
-    ;
+    margin-bottom: -20px;;
     padding: 20px 10px 20px 20px;
     border-radius: 10px 10px 0 0;
     width: auto;
@@ -77,6 +100,7 @@ main img {
     display: flex;
     flex-flow: wrap;
     text-align: center;
+    /* box-shadow: 0 0 10px #000; */
 }
 
 .images-container div {
@@ -90,6 +114,38 @@ main img {
     position: relative;
     width: 90%;
 }
+
+  .outer-nav {
+      position: relative;
+      transition:visibility 2000ms;
+      margin-bottom: 20px;
+  }
+
+  .sub-nav {
+      visibility: hidden;
+      position: absolute;
+      background: #222;
+      padding: 10px;
+      list-style: none;
+      left: 10px;
+      font-size: .8em;
+      top: 30px;
+      z-index: 100;
+  }
+
+  .sub-nav li {
+      margin-bottom: 5px;
+      padding: 0 10px;
+  }
+
+  .sub-nav a {
+      color: #aaa;
+  }
+
+  .outer-nav:hover > .sub-nav {
+      visibility: visible;
+      transition: ease-in .2s;
+  }
 
 /* 
     screen-size -> 436px / 437px 
