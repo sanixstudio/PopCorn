@@ -113,4 +113,10 @@ $(document).ready(function () {
         });
     }
 
+    $('#about').on('click', function () {
+        $('#slider').css('display', 'none');
+        $('#posters-container').css('display', 'none');
+        $('#about-page').css('display', 'unset');
+    });
+
 });
