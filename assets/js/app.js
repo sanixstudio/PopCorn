@@ -33,7 +33,7 @@ $(document).ready(function () {
     })
 
     db.ref().on('value', function (snap) {
-        console.log(snap.val().movies);
+        // console.log(snap.val().movies);
     });
 
 
@@ -131,25 +131,44 @@ $(document).ready(function () {
     });
 
 
-    function getQueryResult(moviename) {
-        let queryurl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
-        $.ajax({
-            url: queryurl,
-            method: 'GET'
-        }).then(function (result) {
-            let results = result.results;
-            // console.log(result.results);
+    // function getQueryResult(moviename) {
+    //     let queryurl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
+    //     $.ajax({
+    //         url: queryurl,
+    //         method: 'GET'
+    //     }).then(function (result) {
+    //         let results = result.results;
+    //         // console.log(result.results);
 
-            for (let pages in results) {
-                // console.log(results[pages]);
+    //         for (let pages in results) {
+    //             // console.log(results[pages]);
 
-                console.log(results[pages].original_title);
-                console.log(results[pages].release_date);
-                console.log(results[pages].popularity);
-                console.log(results[pages].overview);
-            }
-        });
-    }
+    //             console.log(results[pages].original_title);
+    //             console.log(results[pages].release_date);
+    //             console.log(results[pages].popularity);
+    //             console.log(results[pages].overview);
+    //         }
+    //     });
+    // }
+
+
+    $('#searchbox').on('keypress', function (e) {
+        $('.search-result').empty();
+
+        if (e.key === "Enter") {
+            movieName = $('#searchbox').val();
+            // console.log(movieName);
+
+            $('#slider').css('display', 'none');
+            $('#posters-container').css('display', 'none');
+            $('#about-page').css('display', 'none');
+
+            $('.search-results').css('display', 'unset');
+
+            getQueryResultSearch(movieName);
+            $('#searchbox').val('');
+        }
+    });
 
     function getQueryResultSearch(moviename) {
         let queryurl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
@@ -161,12 +180,23 @@ $(document).ready(function () {
             // console.log(result.results);
 
             for (let pages in results) {
-                // console.log(results[pages]);
 
-                console.log(results[pages].original_title);
-                console.log(results[pages].release_date);
-                console.log(results[pages].popularity);
-                console.log(results[pages].overview);
+                // console.log(results[pages].original_title);
+                // console.log(results[pages].release_date);
+                // console.log(results[pages].popularity);
+                // console.log(results[pages].overview);
+
+                let searchResults = $(`
+                    <div class="search-title each-search-result">
+                        <h3 class="main-results-heading">${results[pages].original_title}</h3>
+                        <div class="search-results-heading"><span class="text-light">Popularity:</span> ${Math.round(results[pages].popularity)}</div>
+                        <div class="search-results-heading"><span class="text-light">Release Year:</span> ${results[pages].release_date}</div>
+                        <div class="search-results-heading"><span class="text-light">Overview: </span>${results[pages].overview}</div>
+                    </div>
+                    `);
+                console.log(searchResults);
+
+                $('.search-result').append(searchResults);
             }
         });
     }
