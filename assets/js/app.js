@@ -183,6 +183,8 @@ $(document).ready(function () {
                     <div class="search-title each-search-result">
                         <h3 class="main-results-heading">${results[pages].original_title}</h3>
                         <div class="search-results-heading"><span class="text-light">Popularity:</span> ${Math.round(results[pages].popularity)}</div>
+                        <div class="search-results-heading"><span class="text-light">Total Votes:</span> ${results[pages].vote_count}</div>
+                        <div class="search-results-heading"><span class="text-light">Average Votes:</span> ${results[pages].vote_average}</div>
                         <div class="search-results-heading"><span class="text-light">Release Year:</span> ${results[pages].release_date}</div>
                         <div class="search-results-heading"><span class="text-light">Overview: </span>${results[pages].overview}</div>
                     </div>
