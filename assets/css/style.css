@@ -69,12 +69,7 @@ body {
 
 .genre:hover> .sub-menu {
     visibility: visible;
-    /* display: unset; */
 }
-
-
-
-/* .slider {} */
 
 main {
     margin: 20px 0;
@@ -82,8 +77,23 @@ main {
 }
 
 main img {
-    /* width: 100%; */
     margin-bottom: 20px;
+}
+
+.main-results-heading {
+    color: #facf63;
+}
+
+.search-results-heading {
+    color: #aaa;
+}
+
+.each-search-result {
+    padding: 20px;
+}
+
+.search-title {
+    color: #f9c13e;
 }
 
 .cat-title {
