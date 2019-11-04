@@ -114,44 +114,15 @@ $(document).ready(function () {
         });
     }
 
-    $('#about').on('click', function () {
-        $('#slider').css('display', 'none');
-        $('#posters-container').css('display', 'none');
-        $('#about-page').css('display', 'unset');
-    });
-
-
-
-
     ///////////////////////////////////////////////////////
 
+    // get genre
     $('.genre-options').on('click', function (e) {
         movieName = e.target.innerHTML;
         getQueryResult(movieName);
     });
 
-
-    // function getQueryResult(moviename) {
-    //     let queryurl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
-    //     $.ajax({
-    //         url: queryurl,
-    //         method: 'GET'
-    //     }).then(function (result) {
-    //         let results = result.results;
-    //         // console.log(result.results);
-
-    //         for (let pages in results) {
-    //             // console.log(results[pages]);
-
-    //             console.log(results[pages].original_title);
-    //             console.log(results[pages].release_date);
-    //             console.log(results[pages].popularity);
-    //             console.log(results[pages].overview);
-    //         }
-    //     });
-    // }
-
-
+    // get the user input in the search area and search for movies
     $('#searchbox').on('keypress', function (e) {
 
         if (e.key === "Enter") {
@@ -160,14 +131,13 @@ $(document).ready(function () {
 
             $('#slider').css('display', 'none');
             $('#posters-container').css('display', 'none');
-            $('#about-page').css('display', 'none');
-
             $('.search-results').css('display', 'unset');
 
             getQueryResultSearch(movieName);
         }
     });
-
+    
+    // function to get movies by movie name
     function getQueryResultSearch(moviename) {
         let queryurl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
         $.ajax({
