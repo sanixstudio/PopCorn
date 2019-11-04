@@ -153,7 +153,6 @@ $(document).ready(function () {
 
 
     $('#searchbox').on('keypress', function (e) {
-        $('.search-result').empty();
 
         if (e.key === "Enter") {
             movieName = $('#searchbox').val();
@@ -166,7 +165,6 @@ $(document).ready(function () {
             $('.search-results').css('display', 'unset');
 
             getQueryResultSearch(movieName);
-            $('#searchbox').val('');
         }
     });
 
@@ -181,11 +179,6 @@ $(document).ready(function () {
 
             for (let pages in results) {
 
-                // console.log(results[pages].original_title);
-                // console.log(results[pages].release_date);
-                // console.log(results[pages].popularity);
-                // console.log(results[pages].overview);
-
                 let searchResults = $(`
                     <div class="search-title each-search-result">
                         <h3 class="main-results-heading">${results[pages].original_title}</h3>
@@ -194,9 +187,9 @@ $(document).ready(function () {
                         <div class="search-results-heading"><span class="text-light">Overview: </span>${results[pages].overview}</div>
                     </div>
                     `);
-                console.log(searchResults);
 
                 $('.search-result').append(searchResults);
+                $('#searchbox').val('');
             }
         });
     }
