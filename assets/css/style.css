@@ -135,8 +135,8 @@ main img {
     width: 90%;
 }
 
-#about-page {
-    display: none;
+#about {
+    cursor: pointer;
 }
 
 .about-us {
