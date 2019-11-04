@@ -116,12 +116,6 @@ $(document).ready(function () {
 
     ///////////////////////////////////////////////////////
 
-    // get genre
-    $('.genre-options').on('click', function (e) {
-        movieName = e.target.innerHTML;
-        getQueryResult(movieName);
-    });
-
     // get the user input in the search area and search for movies
     $('#searchbox').on('keypress', function (e) {
 
