@@ -100,7 +100,6 @@ main img {
     background: -webkit-linear-gradient(top,  #ffd65e 0%,#febf04 100%);
     background: linear-gradient(to bottom,  #ffd65e 0%,#febf04 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 );
-    
 }
 
 .images-container {
@@ -109,9 +108,9 @@ main img {
     text-align: center;
     padding: 10px;
     background: -moz-linear-gradient(top, rgba(249,193,62,1) 0%, rgba(255,255,255,0) 100%);
-background: -webkit-linear-gradient(top, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-background: linear-gradient(to bottom, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c13e', endColorstr='#00ffffff',GradientType=0 );
+    background: -webkit-linear-gradient(top, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c13e', endColorstr='#00ffffff',GradientType=0 );
 }
 
 .images-container div {
@@ -126,37 +125,40 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c13e', end
     width: 90%;
 }
 
-  .outer-nav {
-      position: relative;
-      transition:visibility 2000ms;
-      margin-bottom: 20px;
-  }
+.outer-nav {
+    position: relative;
+    transition:visibility 2000ms;
+    margin-bottom: 20px;
+}
 
-  .sub-nav {
-      visibility: hidden;
-      position: absolute;
-      background: #222;
-      padding: 10px;
-      list-style: none;
-      left: 10px;
-      font-size: .8em;
-      top: 30px;
-      z-index: 100;
-  }
+.sub-nav {
+    visibility: hidden;
+    position: absolute;
+    background: rgba(249, 193, 62, .7);
+    padding: 5px 20px 20px 20px;
+    list-style: none;
+    left: 15px;
+    font-size: .8em;
+    top: 30px;
+    z-index: 100;
+    transform: scale(0);
+    transition: transform ease .3s;
+}
 
-  .sub-nav li {
-      margin-bottom: 5px;
-      padding: 0 10px;
-  }
+.sub-nav li {
+    margin-bottom: 5px;
+    padding: 0 10px;
+}
 
-  .sub-nav a {
-      color: #aaa;
-  }
+.sub-nav a {
+    color: #fff;
+}
 
-  .outer-nav:hover > .sub-nav {
-      visibility: visible;
-      transition: ease-in .2s;
-  }
+.outer-nav:hover > .sub-nav {
+    visibility: visible;
+    transform: scale(1);
+    transition: transform ease .3s;
+}
 
 /* 
     screen-size -> 436px / 437px 
