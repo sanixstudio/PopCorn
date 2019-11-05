@@ -3,18 +3,18 @@ body {
 }
 
 /* need to be placed in the right place */
-#logoRating{
+#logoRating {
     height: 35px;
     width: 35px;
     position: absolute;
     z-index: 10;
     transform: translateX(-100%);
-    
+
 }
 
 
 /* need to be placed in the right place */
-.posters{
+.posters {
     position: relative;
     z-index: 1;
 }
@@ -40,12 +40,8 @@ body {
     background-size: 26px;
     background-position: 97%;
     margin-bottom: 20px;
-<<<<<<< HEAD
-    ;
-=======
     height: 50px;
     margin-top: 20px;
->>>>>>> origin/master
 }
 
 .movie-caption {
@@ -80,11 +76,17 @@ main {
     text-align: center;
 }
 
+.nav-link {
+    color: #777;
+    padding-bottom: 20px;
+    font-size: 18pt;
+
+}
+
 main img {
     margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
 .cat-title {
     color: #1b170d;
     box-shadow: 0 0 10px #000;
@@ -92,7 +94,7 @@ main img {
     margin-bottom: -20px;
     ;
     padding: 20px 10px 20px 20px;
-=======
+
 .main-results-heading {
     color: #facf63;
 }
@@ -103,6 +105,7 @@ main img {
 
 .each-search-result {
     padding: 20px;
+    border-bottom: 1px solid silver;
 }
 
 .search-title {
@@ -114,16 +117,16 @@ main img {
     margin-top: 20px;
     text-shadow: -1px -1px 1px #fff;
     padding: 20px;
->>>>>>> origin/master
     border-radius: 10px 10px 0 0;
     width: auto;
     margin-bottom: 0;
     background: #f9c13e;
     background: #ffd65e;
-    background: -moz-linear-gradient(top,  #ffd65e 0%, #febf04 100%);
-    background: -webkit-linear-gradient(top,  #ffd65e 0%,#febf04 100%);
-    background: linear-gradient(to bottom,  #ffd65e 0%,#febf04 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 );
+
+    background: -moz-linear-gradient(top, #ffd65e 0%, #febf04 100%);
+    background: -webkit-linear-gradient(top, #ffd65e 0%, #febf04 100%);
+    background: linear-gradient(to bottom, #ffd65e 0%, #febf04 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd65e', endColorstr='#febf04', GradientType=0);
 }
 
 .images-container {
@@ -131,10 +134,10 @@ main img {
     flex-flow: wrap;
     text-align: center;
     padding: 10px;
-    background: -moz-linear-gradient(top, rgba(249,193,62,1) 0%, rgba(255,255,255,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-    background: linear-gradient(to bottom, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c13e', endColorstr='#00ffffff',GradientType=0 );
+    background: -moz-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9c13e', endColorstr='#00ffffff', GradientType=0);
 }
 
 .images-container div {
@@ -156,15 +159,15 @@ main img {
 .about-us {
     padding: 40px;
     margin-bottom: 60px;
-    background: -moz-linear-gradient(top, rgba(249,193,62,1) 0%, rgba(255,255,255,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-    background: linear-gradient(to bottom, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c13e', endColorstr='#00ffffff',GradientType=0 );
+    background: -moz-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9c13e', endColorstr='#00ffffff', GradientType=0);
 }
 
 .outer-nav {
     position: relative;
-    transition:visibility 2000ms;
+    transition: visibility 2000ms;
     margin-bottom: 20px;
 }
 
@@ -191,7 +194,8 @@ main img {
     color: #fff;
 }
 
-.outer-nav:hover > .sub-nav {
+
+.outer-nav:hover>.sub-nav {
     visibility: visible;
     transform: scale(1);
     transition: transform ease .3s;

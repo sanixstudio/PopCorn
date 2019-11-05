@@ -143,7 +143,7 @@ $(document).ready(function () {
             $('#slider').css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('.search-results').css('display', 'unset');
-
+          
             getQueryResultSearch(movieName);
         }
     });
@@ -159,7 +159,6 @@ $(document).ready(function () {
             // console.log(result.results);
 
             for (let pages in results) {
-
                 let searchResults = $(`
                     <div class="search-title each-search-result">
                         <h3 class="main-results-heading">${results[pages].original_title}</h3>
