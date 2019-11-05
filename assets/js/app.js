@@ -59,7 +59,7 @@ $(document).ready(function () {
             // css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('.search-results').css('display', 'unset');
-
+          
             getQueryResultSearch(movieName);
         }
 
@@ -90,6 +90,7 @@ $(document).ready(function () {
 
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
+
             }
         });
     }
@@ -152,4 +153,5 @@ $(document).ready(function () {
             }
         });
     }
+
 });
