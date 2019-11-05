@@ -94,6 +94,38 @@ main img {
     width: 90%;
 }
 
+  .outer-nav {
+      position: relative;
+      transition:visibility 2000ms;
+      margin-bottom: 20px;
+  }
+
+  .sub-nav {
+      visibility: hidden;
+      position: absolute;
+      background: #222;
+      padding: 10px;
+      list-style: none;
+      left: 10px;
+      font-size: .8em;
+      top: 30px;
+      z-index: 100;
+  }
+
+  .sub-nav li {
+      margin-bottom: 5px;
+      padding: 0 10px;
+  }
+
+  .sub-nav a {
+      color: #aaa;
+  }
+
+  .outer-nav:hover > .sub-nav {
+      visibility: visible;
+      transition: ease-in .2s;
+  }
+
 /* 
     screen-size -> 436px / 437px 
     screen-size-max -> 1300
