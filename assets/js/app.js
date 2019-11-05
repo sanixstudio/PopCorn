@@ -8,21 +8,6 @@ $(document).ready(function () {
 
         clickedBro.push($(document.querySelector("#logoRating")))
         console.log($(document.querySelector("#logoRating")))
-
-        // auth.onAuthStateChanged(user => {
-        //     if (user) {
-        //         console.log('signed in');
-        //         $('#login').hide();
-        //         const logoutB = $('<button>').attr('id', 'logout');
-        //         logoutB.text('Logout');
-        //         $('.logoutButton').append(logoutB);
-        //     } else {
-        //         console.log('signed out');
-        //         $('#login').show();
-        //         $('.logoutButton').empty();
-        //     }
-        // });
-
     })
     // -----------------------------------------------------------------------------------
 
@@ -41,8 +26,6 @@ $(document).ready(function () {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
-    const auth = firebase.auth()
-
 
     db.ref().set('value', snap => {
 
@@ -137,15 +120,19 @@ $(document).ready(function () {
     $('#searchbox').on('keypress', function (e) {
 
         if (e.key === "Enter") {
+            e.preventDefault()
+            $('.search-result').empty()
             movieName = $('#searchbox').val();
-            // console.log(movieName);
+            console.log('Hello');
 
-            $('#slider').css('display', 'none');
+            $('#slider').empty();
+            // css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('.search-results').css('display', 'unset');
           
             getQueryResultSearch(movieName);
         }
+
     });
 
     // function to get movies by movie name
@@ -169,6 +156,7 @@ $(document).ready(function () {
                         <div class="search-results-heading"><span class="text-light">Overview: </span>${results[pages].overview}</div>
                     </div>
                     `);
+                console.log(searchResults)
 
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
