@@ -89,7 +89,7 @@ main img {
 
 .cat-title {
     color: #1b170d;
-    box-shadow: 0 0 10px #000;
+    /* box-shadow: 0 0 10px #000; */
     margin-top: 40px;
     margin-bottom: -20px;
     padding: 20px 10px 20px 20px;
@@ -200,6 +200,45 @@ main img {
     transform: scale(1);
     transition: transform ease .3s;
 }
+
+.action-movies {
+    background: -moz-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9c13e', endColorstr='#00ffffff', GradientType=0);
+}
+
+.results-container {
+    margin-bottom: 40px;
+    background: rgba(0,0,0,.2);
+    padding: 20px;
+}
+
+.movie-popularity {
+}
+
+.movie-vote-count {}
+
+.movie-vote-avg {}
+
+.movie-release-year {}
+
+.m-title {
+    padding: 5px 5px 5px 85px;
+    margin-bottom: 2px;
+    margin-left: 120px;
+    background: rgba(126, 125, 125,.5);
+}
+
+.movie-overview {
+    margin-left: 185px;
+    padding: 20px;
+}
+
+
+
+
+
 
 /* 
     screen-size -> 436px / 437px 
