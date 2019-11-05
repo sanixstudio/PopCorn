@@ -9,9 +9,6 @@ $(document).ready(function () {
         clickedBro.push($(document.querySelector("#logoRating")))
         console.log($(document.querySelector("#logoRating")))
     })
-    // -----------------------------------------------------------------------------------
-
-
 
     //  Firebase data info 
     var firebaseConfig = {
@@ -36,8 +33,6 @@ $(document).ready(function () {
         // console.log(snap.val().movies);
     });
 
-
-
     // const apiKey;
     const apiKey = "f3f124a7e3af05d748ddcefe10f25cb0";
     const imgDb = "http://image.tmdb.org/t/p/w185/";
@@ -45,76 +40,10 @@ $(document).ready(function () {
     const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&api_key=${apiKey}`;
     const urlTopRatedMovies = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=${apiKey}`;
 
-    let count = 0;
+    getMoviesData(urlNowPlaying, $('#playingNow'));
+    getMoviesData(urlUpcomingMovies, $('#upcomingMovies'));
+    getMoviesData(urlTopRatedMovies, $('#topRated'));
 
-    getUpcomingMovies();
-    getPlayingNow();
-    getTopRatedMovies();
-    // getPlayingNowMovieDetails();
-
-    function getUpcomingMovies() {
-        $.ajax({
-            url: urlUpcomingMovies,
-            method: 'GET'
-        }).then(function (_data) {
-            let results = _data.results;
-            for (let element in results) {
-                allPosters = results[element].poster_path;
-                // console.log(imgDb + allPosters);
-
-                let posterImg = `<div>
-                    <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
-                    <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
-                    </div>`;
-                $('#upcomingMovies').append(posterImg);
-            }
-        });
-    }
-
-    function getPlayingNow() {
-        $.ajax({
-            url: urlNowPlaying,
-            method: 'GET'
-        }).then(function (_data) {
-            let results = _data.results;
-            for (let element in results) {
-
-                allPosters = results[element].poster_path;
-                let movieTitle = results[element].original_title;
-                let ratings = results[element].vote_average
-                // console.log(imgDb + allPosters);
-
-                let posterImg = `<div>
-                        <img class="img-fluid posters img-thumbnail" src="${imgDb + allPosters}" alt="">
-                        <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
-                        </div>`;
-                $('#playingNow').append(posterImg);
-
-
-            }
-        });
-    }
-
-    function getTopRatedMovies() {
-        $.ajax({
-            url: urlTopRatedMovies,
-            method: 'GET'
-        }).then(function (_data) {
-            let results = _data.results;
-            for (let element in results) {
-                allPosters = results[element].poster_path;
-                // console.log(imgDb + allPosters);
-
-                let posterImg = `<div>
-                        <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
-                        <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
-                        </div>`;
-                $('#topRated').append(posterImg);
-            }
-        });
-    }
-
-    ///////////////////////////////////////////////////////
 
     // get the user input in the search area and search for movies
     $('#searchbox').on('keypress', function (e) {
@@ -161,6 +90,28 @@ $(document).ready(function () {
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
 
+            }
+        });
+    }
+
+    // get the movies poster by given url and append it to the given containerId
+    function getMoviesData(siteUrl, containerId) {
+        $.ajax({
+
+            url: siteUrl,
+            method: 'GET'
+
+        }).then(function (_data) {
+            
+            let results = _data.results;
+
+            for (let element in results) {
+                allPosters = results[element].poster_path;
+                let posterImg = `<div>
+                        <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
+                        <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
+                        </div>`;
+                $(containerId).append(posterImg);
             }
         });
     }
