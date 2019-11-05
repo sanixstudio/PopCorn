@@ -13,19 +13,17 @@ $(document).ready(function () {
     }).then(function (_data) {
 
         let results = _data.results;
-        // console.log(results);
-
-        genreId = getGenreId();
+    
+        genreId = getGenreId();        
 
         function getGenreId() {
-            for (let each of results) {
-                console.log(results);
+            for(let each of results) {
+                for(let key in each) {
+                    let idsArray = each.genre_ids;
+                    // console.log(each);
 
-                let idsArray = each.genre_ids;
-                // console.log(each);
-
-                if (idsArray.includes(28)) {
-                    $('.action-movies').append(`<div class="row p-2 text-light">
+                    if(idsArray.includes(99)){
+                        $('.action-movies').append(`<div class="row p-2 text-light">
                             Original Title: ${each.original_title}<br>
                             Popularity: ${each.popularity}<br>
                             Votes Count: ${each.vote_count}<br>
@@ -33,8 +31,8 @@ $(document).ready(function () {
                             Overview: ${each.overview};
                         </div>
                         `);
+                    }
                 }
-
             }
         }
     });
