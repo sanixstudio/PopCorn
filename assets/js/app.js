@@ -120,17 +120,21 @@ $(document).ready(function () {
     $('#searchbox').on('keypress', function (e) {
 
         if (e.key === "Enter") {
+            e.preventDefault()
+            $('.search-result').empty()
             movieName = $('#searchbox').val();
-            // console.log(movieName);
+            console.log('Hello');
 
-            $('#slider').css('display', 'none');
+            $('#slider').empty();
+            // css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('.search-results').css('display', 'unset');
-
+          
             getQueryResultSearch(movieName);
         }
+
     });
-    
+
     // function to get movies by movie name
     function getQueryResultSearch(moviename) {
         let queryurl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
@@ -142,7 +146,6 @@ $(document).ready(function () {
             // console.log(result.results);
 
             for (let pages in results) {
-
                 let searchResults = $(`
                     <div class="search-title each-search-result">
                         <h3 class="main-results-heading">${results[pages].original_title}</h3>
@@ -153,11 +156,24 @@ $(document).ready(function () {
                         <div class="search-results-heading"><span class="text-light">Overview: </span>${results[pages].overview}</div>
                     </div>
                     `);
+                console.log(searchResults)
 
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
+
             }
         });
     }
+
+    // Genre
+
+
+
+    $(document).on('click', , function (e) {
+        e.preventDefault()
+        console.log('hi')
+
+
+    })
 
 });
