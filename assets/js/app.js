@@ -164,6 +164,6 @@ $(document).ready(function () {
         });
     }
 
-    // code area for something new
+  console.log('test Hi');
 
 });
