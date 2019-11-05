@@ -94,14 +94,10 @@ $(document).ready(function () {
         });
     }
 
-    $('.img-fluid').on('click', function () {
-        let btnclick = $('<h1>Hi</h1>')
-        $('.images-container').append(btnclick);
-        console.log(btnclick);
 
 
 
 
-    });
+
 
 });

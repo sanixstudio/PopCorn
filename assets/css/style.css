@@ -49,11 +49,10 @@ main img {
 
 .cat-title {
     color: #aaa;
-    color: #1b170d;
-    box-shadow: 0 0 10px #000;
+    /* color: #1b170d; */
+    /* box-shadow: 0 0 10px #000; */
     margin-top: 40px;
     margin-bottom: -20px;
-    ;
     padding: 20px 10px 20px 20px;
     border-radius: 10px 10px 0 0;
     width: auto;
@@ -75,6 +74,15 @@ main img {
 .images-container div img {
     height: auto;
     width: 90%;
+}
+
+.img-fluid:hover {
+    opacity: 0.5;
+
+}
+
+.Time {
+    font-size: 12pt;
 }
 
 /* 
