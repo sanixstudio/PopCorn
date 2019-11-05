@@ -2,21 +2,46 @@ body {
     background-color: #212324;
 }
 
+/* need to be placed in the right place */
+#logoRating {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    z-index: 10;
+    transform: translateX(-100%);
+
+}
+
+
+/* need to be placed in the right place */
+.posters {
+    position: relative;
+    z-index: 1;
+}
+
+
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* .container {} */
+
+.logo {
+    color: #facf63;
+    font-size: 40px;
+}
+
 #searchbox {
     position: relative;
     overflow: hidden;
-    background-image: url('../images/search-light.png');
+    background-image: url('../images/search.png');
     background-repeat: no-repeat;
     background-size: 26px;
-    color: #777;
     background-position: 97%;
     margin-bottom: 20px;
-    ;
+    height: 50px;
+    margin-top: 20px;
 }
 
 .movie-caption {
@@ -28,7 +53,23 @@ body {
     text-align: left;
 }
 
-/* .slider {} */
+.sub-menu {
+    visibility: hidden;
+    /* display: none; */
+    position: absolute;
+    z-index: 11;
+    list-style: none;
+    padding: 0 20px 10px 20px;
+    background-color: #1b170d;
+}
+
+.genre {
+    position: relative;
+}
+
+.genre:hover>.sub-menu {
+    visibility: visible;
+}
 
 main {
     margin: 20px 0;
@@ -43,26 +84,50 @@ main {
 }
 
 main img {
-    /* width: 100%; */
     margin-bottom: 20px;
 }
 
-.cat-title {
+.main-results-heading {
+    color: #facf63;
+}
+
+.search-results-heading {
     color: #aaa;
-    /* color: #1b170d; */
-    /* box-shadow: 0 0 10px #000; */
-    margin-top: 40px;
-    margin-bottom: -20px;
-    padding: 20px 10px 20px 20px;
+}
+
+.each-search-result {
+    padding: 20px;
+}
+
+.search-title {
+    color: #f9c13e;
+}
+
+.cat-title {
+    color: #333;
+    margin-top: 20px;
+    text-shadow: -1px -1px 1px #fff;
+    padding: 20px;
     border-radius: 10px 10px 0 0;
     width: auto;
-    border-bottom: solid 1px #212324;
+    margin-bottom: 0;
+    background: #f9c13e;
+    background: #ffd65e;
+    background: -moz-linear-gradient(top, #ffd65e 0%, #febf04 100%);
+    background: -webkit-linear-gradient(top, #ffd65e 0%, #febf04 100%);
+    background: linear-gradient(to bottom, #ffd65e 0%, #febf04 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd65e', endColorstr='#febf04', GradientType=0);
 }
 
 .images-container {
     display: flex;
     flex-flow: wrap;
     text-align: center;
+    padding: 10px;
+    background: -moz-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9c13e', endColorstr='#00ffffff', GradientType=0);
 }
 
 .images-container div {
@@ -73,16 +138,56 @@ main img {
 
 .images-container div img {
     height: auto;
+    position: relative;
     width: 90%;
 }
 
-.img-fluid:hover {
-    opacity: 0.5;
-
+#about {
+    cursor: pointer;
 }
 
-.Time {
-    font-size: 12pt;
+.about-us {
+    padding: 40px;
+    margin-bottom: 60px;
+    background: -moz-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9c13e', endColorstr='#00ffffff', GradientType=0);
+}
+
+.outer-nav {
+    position: relative;
+    transition: visibility 2000ms;
+    margin-bottom: 20px;
+}
+
+.sub-nav {
+    visibility: hidden;
+    position: absolute;
+    background: rgba(249, 193, 62, .7);
+    padding: 5px 20px 20px 20px;
+    list-style: none;
+    left: 15px;
+    font-size: .8em;
+    top: 30px;
+    z-index: 100;
+    transform: scale(0);
+    transition: transform ease .3s;
+}
+
+.sub-nav li {
+    margin-bottom: 5px;
+    padding: 0 10px;
+}
+
+.sub-nav a {
+    color: #fff;
+}
+
+.outer-nav:hover>.sub-nav {
+    visibility: visible;
+    transform: scale(1);
+    transition: transform ease .3s;
 }
 
 /* 
