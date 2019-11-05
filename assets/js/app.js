@@ -129,7 +129,7 @@ $(document).ready(function () {
             // css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('.search-results').css('display', 'unset');
-          
+
             getQueryResultSearch(movieName);
         }
 
@@ -160,20 +160,10 @@ $(document).ready(function () {
 
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
-
             }
         });
     }
 
-    // Genre
-
-
-
-    $(document).on('click', , function (e) {
-        e.preventDefault()
-        console.log('hi')
-
-
-    })
+    // code area for something new
 
 });
