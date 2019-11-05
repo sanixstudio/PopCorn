@@ -8,6 +8,21 @@ $(document).ready(function () {
 
         clickedBro.push($(document.querySelector("#logoRating")))
         console.log($(document.querySelector("#logoRating")))
+
+        // auth.onAuthStateChanged(user => {
+        //     if (user) {
+        //         console.log('signed in');
+        //         $('#login').hide();
+        //         const logoutB = $('<button>').attr('id', 'logout');
+        //         logoutB.text('Logout');
+        //         $('.logoutButton').append(logoutB);
+        //     } else {
+        //         console.log('signed out');
+        //         $('#login').show();
+        //         $('.logoutButton').empty();
+        //     }
+        // });
+
     })
     // -----------------------------------------------------------------------------------
 
@@ -26,6 +41,8 @@ $(document).ready(function () {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
+    const auth = firebase.auth()
+
 
     db.ref().set('value', snap => {
 
@@ -156,6 +173,7 @@ $(document).ready(function () {
 
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
+
             }
         });
     }
