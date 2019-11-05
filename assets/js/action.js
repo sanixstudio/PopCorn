@@ -4,7 +4,7 @@ $(document).ready(function () {
     const imgDb = "http://image.tmdb.org/t/p/w185/";
     const genreUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=action&page=1&include_adult=false`;
     var genreId;
-    
+
     $.ajax({
 
         url: genreUrl,
@@ -13,16 +13,16 @@ $(document).ready(function () {
     }).then(function (_data) {
 
         let results = _data.results;
-    
-        genreId = getGenreId();        
+
+        genreId = getGenreId();
 
         function getGenreId() {
-            for(let each of results) {
-                for(let key in each) {
+            for (let each of results) {
+                for (let key in each) {
                     let idsArray = each.genre_ids;
                     // console.log(each);
 
-                    if(idsArray.includes(99)){
+                    if (idsArray.includes(28)) {
                         $('.action-movies').append(`<div class="row p-2 text-light">
                             Original Title: ${each.original_title}<br>
                             Popularity: ${each.popularity}<br>
