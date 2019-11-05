@@ -151,18 +151,16 @@ $(document).ready(function () {
     //     });
     // }
 
-
     $('#searchbox').on('keypress', function (e) {
+        e.preventDefault();
         $('.search-result').empty();
 
         if (e.key === "Enter") {
             movieName = $('#searchbox').val();
-            // console.log(movieName);
 
             $('#slider').css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('#about-page').css('display', 'none');
-
             $('.search-results').css('display', 'unset');
 
             getQueryResultSearch(movieName);
@@ -176,16 +174,10 @@ $(document).ready(function () {
             url: queryurl,
             method: 'GET'
         }).then(function (result) {
+
             let results = result.results;
-            // console.log(result.results);
 
             for (let pages in results) {
-
-                // console.log(results[pages].original_title);
-                // console.log(results[pages].release_date);
-                // console.log(results[pages].popularity);
-                // console.log(results[pages].overview);
-
                 let searchResults = $(`
                     <div class="search-title each-search-result">
                         <h3 class="main-results-heading">${results[pages].original_title}</h3>
@@ -194,8 +186,6 @@ $(document).ready(function () {
                         <div class="search-results-heading"><span class="text-light">Overview: </span>${results[pages].overview}</div>
                     </div>
                     `);
-                console.log(searchResults);
-
                 $('.search-result').append(searchResults);
             }
         });

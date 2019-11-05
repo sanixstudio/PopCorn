@@ -90,6 +90,7 @@ main img {
 
 .each-search-result {
     padding: 20px;
+    border-bottom: 1px solid silver;
 }
 
 .search-title {
