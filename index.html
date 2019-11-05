@@ -9,7 +9,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="icon" href="./assets/images/favicon-16x16.png" type="" sizes="16x16">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Action Movies</title>
+    <title>PopCorn Movies</title>
 
 </head>
 
@@ -22,48 +22,48 @@
                     <img class="img-fluid" src="./assets/images/logo.png" alt="">
                 </div>
 
-                <div class="col-xs-12 m-0 col-sm-12 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-lg-6  mb-3">
                     <form class="search-form">
                         <input type="text" class="form-control" id="searchbox" placeholder="enter your keywords">
                     </form>
                 </div>
             </header>
-        </div>
 
-        <!-- mainNav -->
-        <div class="container-fluid bg-dark pt-3">
-            <ul class="nav justify-content-center">
+            <ul class="nav main justify-content-center p-2">
                 <li class="nav-item">
-                    <a class="nav-link active text-light" href="index.html">Home</a>
+                    <a class="nav-link primary-color" href="index.html">Home</a>
                 </li>
                 <li class="outer-nav nav-item">
                     <a class="nav-link text-light">Genre</a>
                     <ul class="sub-nav">
                         <li><a class="genre-options" href="action.html">Action</a></li>
-                        <li><span class="genre-options" data="romance" name="romance">Romance</span></li>
-                        <li><span class="genre-options" data="horror" name="horror">Horror</span></li>
-                        <li><span class="genre-options" data="comedy" name="comedy">Comedy</span></li>
-                        <li><span class="genre-options" data="mystery" name="mystery">Mystery</span></li>
-                        <li><span class="genre-options" data="drama" name="drama">Drama</span></li>
-                        <li><span class="genre-options" data="sport" name="sport">Sport</span></li>
-                        <li><span class="genre-options" data="scify" name="scify">Sci-Fi</s></li>
-                        <li><span class="genre-options" data="adventure" name="adventure">Adventure</span></li>
-                        <li><span class="genre-options" data="thriller" name="thriller">Thriller</span></li>
-                        <li><span class="genre-options" data="family" name="family">Family</span></li>
-                        <li><span class="genre-options" data="biography" name="biography">Biography</span></li>
+                        <li><a class="genre-options" href="romance.html" name="romance">Romance</a></li>
+                        <li><a class="genre-options" href="horror.html" name="horror">Horror</a></li>
+                        <li><a class="genre-options" href="comedy.html" name="comedy">Comedy</>
+                        </li>
+                        <li><a class="genre-options" href="mystery.html" name="mystery">Mystery</>
+                        </li>
+                        <li><a class="genre-options" href="drama.html" name="drama">Drama</a></li>
+                        <li><a class="genre-options" href="sport.html" name="sport">Sport</a></li>
+                        <li><a class="genre-options" href="scify.html" name="scify">Sci-Fi</s></li>
+                        <li><a class="genre-options" href="adventure.html" name="adventure">Adventure</a></li>
+                        <li><a class="genre-options" href="thriller.html" name="thriller">Thriller</a></li>
+                        <li><a class="genre-options" href="family.html" name="family">Family</a></li>
+                        <li><a class="genre-options" href="biography.html" name="biography">Biography</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-light" href="about.html">About</a>
+                    <a class="nav-link primary-color" href="#">About</a>
                 </li>
                 <li class="nav-item">
                     <button type="button" class="btn btn-light">Log in</button>
                 </li>
             </ul>
+
         </div>
 
         <!-- slider -->
-        <div class="container-fluid p-0" id="slider">
+        <div class="container-fluid p-0">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -104,12 +104,14 @@
         </div>
 
         <!-- main -->
-        <div id="posters-container">
-            <main class="container-fluid text-left">
-                <div class="row">
-                    <h3 class="cat-title">Now Playing</h3>
+        <main class="container-fluid text-left">
+            <h3 class="cat-title">Now Playing</h3>
+            <div class="row images-container pt-3">
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster.jpg" alt="">
                 </div>
-                <div class="row images-container pt-3" id="playingNow">
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster1.jpg" alt="">
                 </div>
             </main>
 
@@ -118,22 +120,76 @@
                 <div class="row">
                     <h3 class="cat-title">Upcoming Movies</h3>
                 </div>
-                <div class="row images-container" id="upcomingMovies">
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster8.jpg" alt="">
                 </div>
-            </main>
+            </div>
+        </main>
 
             <!-- Top Rated Movies -->
             <main class="container-fluid text-left">
                 <div class="row">
                     <h3 class="cat-title">Top Rated Movies</h3>
                 </div>
-                <div class="row images-container pt-3" id="topRated">
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster10.jpg" alt="">
                 </div>
-            </main>
-        </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster11.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster12.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster13.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster14.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster15.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster16.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster17.jpg" alt="">
+                </div>
+            </div>
+        </main>
 
-        <!-- movies search result by keywords -->
-        <div class="search-result"></div>
+        <main class="container-fluid text-left">
+            <h3 class="cat-title">Top Rated Movies</h3>
+            <div class="row images-container pt-3">
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster16.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster2.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster8.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster6.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster4.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster15.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster6.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster19.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid img-thumbnail" src="./assets/images/poster/poster18.jpg" alt="">
+                </div>
+            </div>
+        </main>
 
         <!-- footer -->
         <div class="container-fluid">
@@ -151,13 +207,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
         </script>
+    <script src="./assets/js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
         </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
-    <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/user-log.js"></script>
 </body>
