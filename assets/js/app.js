@@ -165,4 +165,15 @@ $(document).ready(function () {
         });
     }
 
+    // Genre
+
+
+
+    $(document).on('click', , function (e) {
+        e.preventDefault()
+        console.log('hi')
+
+
+    })
+
 });
