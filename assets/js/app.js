@@ -129,7 +129,7 @@ $(document).ready(function () {
             // css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('.search-results').css('display', 'unset');
-          
+
             getQueryResultSearch(movieName);
         }
 
@@ -164,5 +164,12 @@ $(document).ready(function () {
             }
         });
     }
+
+    // $('#posters-container').empty();
+
+    // $(document).on('click', '.genre-options', function (e) {
+    //     console.log(this);
+    // });
+
 
 });
