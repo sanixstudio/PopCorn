@@ -130,7 +130,7 @@ $(document).ready(function () {
             getQueryResultSearch(movieName);
         }
     });
-    
+
     // function to get movies by movie name
     function getQueryResultSearch(moviename) {
         let queryurl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
