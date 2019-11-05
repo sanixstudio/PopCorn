@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,9 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Action Movies</title>
 </head>
+
 <body>
-    
+
     <div class="wrapper">
         <div class="container-fluid">
             <header class="row text-center text-lg-left">
@@ -36,7 +38,8 @@
                 <li class="outer-nav nav-item">
                     <a class="nav-link text-light">Genre</a>
                     <ul class="sub-nav">
-                        <li><a class="genre-options" href="action.html">Action</a></li>
+                        <li id="click"> click </li>
+                        <li><span class="genre-options" data="action" name="action">Action</span></li>
                         <li><span class="genre-options" data="romance" name="romance">Romance</span></li>
                         <li><span class="genre-options" data="horror" name="horror">Horror</span></li>
                         <li><span class="genre-options" data="comedy" name="comedy">Comedy</span></li>
@@ -55,13 +58,13 @@
                 </li>
             </ul>
         </div>
-        
+
         <div class="container-fluid">
-                <div class="row">
-                        <h3 class="cat-title">Now Playing</h3>
-                    </div>
-                    <!-- action movies -->
-                    <div class="action-movies"></div>
+            <div class="row">
+                <h3 class="cat-title">Now Playing</h3>
+            </div>
+            <!-- action movies -->
+            <div class="action-movies"></div>
         </div>
 
         <div class="container-fluid">
@@ -70,12 +73,11 @@
             </footer>
         </div>
     </div>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/action.js"></script>
 
 </body>
+
 </html>
