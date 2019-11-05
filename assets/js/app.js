@@ -39,6 +39,7 @@ $(document).ready(function () {
     const urlUpcomingMovies = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=${apiKey}`;
     const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&api_key=${apiKey}`;
     const urlTopRatedMovies = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=${apiKey}`;
+    const urlSearchMovies = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
 
     getMoviesData(urlNowPlaying, $('#playingNow'));
     getMoviesData(urlUpcomingMovies, $('#upcomingMovies'));
@@ -112,6 +113,43 @@ $(document).ready(function () {
                         <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
                         </div>`;
                 $(containerId).append(posterImg);
+            }
+        });
+    }
+
+    // get search results
+    function getSearchResults (searchUrl, keyword, containerId) {
+        var genreId;
+
+        $.ajax({
+
+            url: searchUrl,
+            method: 'GET'
+
+        }).then(function (_data) {
+
+            let results = _data.results;
+        
+            genreId = getGenreId(); 
+
+            function getGenreId() {
+                for(let each of results) {
+                    for(let key in each) {
+                        let idsArray = each.genre_ids;
+                        // console.log(each);
+
+                        if(idsArray.includes(keyword)){
+                            $('.action-movies').append(`<div class="row p-2 text-light">
+                                Original Title: ${each.original_title}<br>
+                                Popularity: ${each.popularity}<br>
+                                Votes Count: ${each.vote_count}<br>
+                                Average Votes: ${each.vote_average}<br>
+                                Overview: ${each.overview};
+                            </div>
+                            `);
+                        }
+                    }
+                }
             }
         });
     }
