@@ -12,6 +12,7 @@ $(document).ready(function () {
 
     }).then(function (_data) {
         let results = _data.results;
+      
         genreId = getGenreId();
 
         function getGenreId() {

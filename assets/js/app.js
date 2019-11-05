@@ -160,11 +160,10 @@ $(document).ready(function () {
 
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
-
             }
         });
     }
 
-    console.log('test Hi');
+  console.log('test Hi');
 
 });
