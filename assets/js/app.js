@@ -8,6 +8,21 @@ $(document).ready(function () {
 
         clickedBro.push($(document.querySelector("#logoRating")))
         console.log($(document.querySelector("#logoRating")))
+
+        // auth.onAuthStateChanged(user => {
+        //     if (user) {
+        //         console.log('signed in');
+        //         $('#login').hide();
+        //         const logoutB = $('<button>').attr('id', 'logout');
+        //         logoutB.text('Logout');
+        //         $('.logoutButton').append(logoutB);
+        //     } else {
+        //         console.log('signed out');
+        //         $('#login').show();
+        //         $('.logoutButton').empty();
+        //     }
+        // });
+
     })
     // -----------------------------------------------------------------------------------
 
@@ -26,6 +41,8 @@ $(document).ready(function () {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
+    const auth = firebase.auth()
+
 
     db.ref().set('value', snap => {
 
@@ -118,15 +135,15 @@ $(document).ready(function () {
 
     // get the user input in the search area and search for movies
     $('#searchbox').on('keypress', function (e) {
-        e.preventDefault();
-        console.log(e);
+
         if (e.key === "Enter") {
             movieName = $('#searchbox').val();
+            // console.log(movieName);
 
             $('#slider').css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('.search-results').css('display', 'unset');
-            console.log("line 129");
+          
             getQueryResultSearch(movieName);
         }
     });
@@ -134,13 +151,12 @@ $(document).ready(function () {
     // function to get movies by movie name
     function getQueryResultSearch(moviename) {
         let queryurl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
-        console.log("line137");
         $.ajax({
             url: queryurl,
             method: 'GET'
         }).then(function (result) {
-
             let results = result.results;
+            // console.log(result.results);
 
             for (let pages in results) {
                 let searchResults = $(`
@@ -153,10 +169,11 @@ $(document).ready(function () {
                         <div class="search-results-heading"><span class="text-light">Overview: </span>${results[pages].overview}</div>
                     </div>
                     `);
+
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
+
             }
-            console.log("line 159");
         });
     }
 
