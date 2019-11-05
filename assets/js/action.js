@@ -4,7 +4,7 @@ $(document).ready(function () {
     const imgDb = "http://image.tmdb.org/t/p/w185/";
     const genreUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=action&page=1&include_adult=false`;
     var genreId;
-    
+
     $.ajax({
 
         url: genreUrl,
