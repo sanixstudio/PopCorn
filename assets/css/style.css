@@ -78,11 +78,6 @@ body {
     visibility: visible;
 }
 
-#each-genre {
-    /* border: solid 1px red; */
-    margin-top: 60px;
-}
-
 .genre-result {
     border: solid 1px rgb(58, 58, 58);
     margin-bottom: 40px;
