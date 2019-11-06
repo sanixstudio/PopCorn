@@ -59,7 +59,7 @@ $(document).ready(function () {
             // css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('.search-results').css('display', 'unset');
-          
+
             getQueryResultSearch(movieName);
         }
 
@@ -103,7 +103,7 @@ $(document).ready(function () {
             method: 'GET'
 
         }).then(function (_data) {
-            
+
             let results = _data.results;
 
             for (let element in results) {
@@ -118,7 +118,7 @@ $(document).ready(function () {
     }
 
     // get search results
-    function getSearchResults (searchUrl, keyword, containerId) {
+    function getSearchResults(searchUrl, keyword, containerId) {
         var genreId;
 
         $.ajax({
@@ -129,16 +129,16 @@ $(document).ready(function () {
         }).then(function (_data) {
 
             let results = _data.results;
-        
-            genreId = getGenreId(); 
+
+            genreId = getGenreId();
 
             function getGenreId() {
-                for(let each of results) {
-                    for(let key in each) {
+                for (let each of results) {
+                    for (let key in each) {
                         let idsArray = each.genre_ids;
                         // console.log(each);
 
-                        if(idsArray.includes(keyword)){
+                        if (idsArray.includes(keyword)) {
                             $('.action-movies').append(`<div class="row p-2 text-light">
                                 Original Title: ${each.original_title}<br>
                                 Popularity: ${each.popularity}<br>
