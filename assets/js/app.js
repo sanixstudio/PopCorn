@@ -123,6 +123,7 @@ $(document).ready(function () {
 
     $('.genre-options').on('click', function () {
         let genreId = parseInt(this.getAttribute("data"));
+        $('#each-genre').empty();
 
 
         // console.log(genreId);
@@ -150,7 +151,16 @@ $(document).ready(function () {
                 let idsArray = each.genre_ids;
 
                 if (idsArray.includes(genreId)) {
-                    console.log(idsArray)
+                    $('#each-genre').append(`<div class="results-container text-light">
+                            <div class="float-left"><img src="${imgDb + each.poster_path}"></div>
+                            <div class="m-title  movie-title">${each.original_title}</div>
+                            <div class="m-title movie-popularity">${each.popularity}</div>
+                            <div class="m-title movie-vote-count">${each.vote_count}</div>
+                            <div class="m-title movie-vote-avg">${each.vote_average}</div>
+                            <div class="m-title movie-release-year">${each.release_date}</div>
+                            <div class="m-title movie-overview">${each.overview}</div>
+                        </div>
+                        `);
                 }
 
             }
