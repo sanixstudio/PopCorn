@@ -40,6 +40,7 @@ $(document).ready(function () {
     const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&api_key=${apiKey}`;
     const urlTopRatedMovies = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=${apiKey}`;
     const urlSearchMovies = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
+    const genreUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=action&page=1&include_adult=false`;
 
     getMoviesData(urlNowPlaying, $('#playingNow'));
     getMoviesData(urlUpcomingMovies, $('#upcomingMovies'));
@@ -117,39 +118,51 @@ $(document).ready(function () {
         });
     }
 
-    // get search results
-    function getSearchResults(searchUrl, keyword, containerId) {
-        var genreId;
 
+    ///////////////////////////////////////////////////////
+
+    $('.genre-options').on('click', function () {
+        let genreId = parseInt(this.getAttribute("data"));
+        $('#each-genre').empty();
+
+
+        // console.log(genreId);
+
+        $('#slider').empty();
+        $('#posters-container').empty();
+
+
+        getMovieByGenre(genreId);
+    });
+
+
+    // get search results
+    function getMovieByGenre(genreId) {
         $.ajax({
 
-            url: searchUrl,
+            url: genreUrl,
             method: 'GET'
 
         }).then(function (_data) {
-
             let results = _data.results;
+            // console.log(results);
 
-            genreId = getGenreId();
+            for (let each of results) {
+                let idsArray = each.genre_ids;
 
-            function getGenreId() {
-                for (let each of results) {
-                    for (let key in each) {
-                        let idsArray = each.genre_ids;
-                        // console.log(each);
-
-                        if (idsArray.includes(keyword)) {
-                            $('.action-movies').append(`<div class="row p-2 text-light">
-                                Original Title: ${each.original_title}<br>
-                                Popularity: ${each.popularity}<br>
-                                Votes Count: ${each.vote_count}<br>
-                                Average Votes: ${each.vote_average}<br>
-                                Overview: ${each.overview};
-                            </div>
-                            `);
-                        }
-                    }
+                if (idsArray.includes(genreId)) {
+                    $('#each-genre').append(`<div class="results-container text-light">
+                            <div class="float-left"><img src="${imgDb + each.poster_path}"></div>
+                            <div class="m-title  movie-title">${each.original_title}</div>
+                            <div class="m-title movie-popularity">${each.popularity}</div>
+                            <div class="m-title movie-vote-count">${each.vote_count}</div>
+                            <div class="m-title movie-vote-avg">${each.vote_average}</div>
+                            <div class="m-title movie-release-year">${each.release_date}</div>
+                            <div class="m-title movie-overview">${each.overview}</div>
+                        </div>
+                        `);
                 }
+
             }
         });
     }
