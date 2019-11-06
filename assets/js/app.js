@@ -35,7 +35,7 @@ $(document).ready(function () {
 
     // const apiKey;
     const apiKey = "f3f124a7e3af05d748ddcefe10f25cb0";
-    const imgDb = "http://image.tmdb.org/t/p/w185/";
+    const imgDb = "https://image.tmdb.org/t/p/w185/";
     const urlUpcomingMovies = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=${apiKey}`;
     const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&api_key=${apiKey}`;
     const urlTopRatedMovies = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=${apiKey}`;
@@ -53,13 +53,11 @@ $(document).ready(function () {
             e.preventDefault()
             $('.search-result').empty()
             movieName = $('#searchbox').val();
-            console.log('Hello');
 
             $('#slider').empty();
             $('#each-genre').empty();
             $('#about2-page').empty();
             $('#posters-container').empty();
-            // $('.search-results').css('display', 'unset');
 
             getQueryResultSearch(movieName);
         }
@@ -73,20 +71,20 @@ $(document).ready(function () {
             method: 'GET'
         }).then(function (result) {
             let results = result.results;
-            // console.log(result.results);
 
             for (let pages in results) {
                 let searchResults = $(`
-                    <div class="search-title each-search-result">
-                        <h3 class="main-results-heading">${results[pages].original_title}</h3>
-                        <div class="search-results-heading"><span class="text-light">Popularity:</span> ${Math.round(results[pages].popularity)}</div>
-                        <div class="search-results-heading"><span class="text-light">Total Votes:</span> ${results[pages].vote_count}</div>
-                        <div class="search-results-heading"><span class="text-light">Average Votes:</span> ${results[pages].vote_average}</div>
-                        <div class="search-results-heading"><span class="text-light">Release Year:</span> ${results[pages].release_date}</div>
-                        <div class="search-results-heading"><span class="text-light">Overview: </span>${results[pages].overview}</div>
+                    <div class="search-title text-info each-search-result mt-5">
+                    <img class="search-img float-left" src="${imgDb + results[pages].poster_path}"></img>
+                    <div class="m-title pl-5 movie-title">${results[pages].original_title}</div>
+                    <div class="m-title pl-5 movie-popularity">${Math.round(results[pages].popularity)}</div>
+                    <div class="m-title pl-5 movie-vote-count"> ${results[pages].vote_count}</div>
+                    <div class="m-title pl-5 movie-vote-avg"> ${results[pages].vote_average}</div>
+                    <div class="m-title pl-5 movie-release-year"> ${results[pages].release_date}</div>
+                    <div class="m-title pl-5 movie-overview">${results[pages].overview}</div>
                     </div>
-                    `);
-                console.log(searchResults)
+                `);
+                console.log(results[pages])
 
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
@@ -124,6 +122,7 @@ $(document).ready(function () {
         $('#slider').empty();
         $('#posters-container').empty();
         $('#about2-page').empty();
+        $('.search-result').empty();
 
         getMovieByGenre(genreId);
     });
@@ -143,14 +142,14 @@ $(document).ready(function () {
                 let idsArray = each.genre_ids;
 
                 if (idsArray.includes(genreId)) {
-                    $('#each-genre').append(`<div class="genre-result mt-5 results-container text-light">
+                    $('#each-genre').append(`<div class="search-title mt-5 text-info each-search-result">
                             <div class="float-left"><img src="${imgDb + each.poster_path}"></div>
-                            <div class="m-title  movie-title">${each.original_title}</div>
-                            <div class="m-title movie-popularity">${each.popularity}</div>
-                            <div class="m-title movie-vote-count">${each.vote_count}</div>
-                            <div class="m-title movie-vote-avg">${each.vote_average}</div>
-                            <div class="m-title movie-release-year">${each.release_date}</div>
-                            <div class="m-title movie-overview">${each.overview}</div>
+                            <div class="m-title pl-5 movie-title">${each.original_title}</div>
+                            <div class="m-title pl-5 movie-popularity">${each.popularity}</div>
+                            <div class="m-title pl-5 movie-vote-count">${each.vote_count}</div>
+                            <div class="m-title pl-5 movie-vote-avg">${each.vote_average}</div>
+                            <div class="m-title pl-5 movie-release-year">${each.release_date}</div>
+                            <div class="m-title pl-5 movie-overview" style="width:50%">${each.overview}</div>
                         </div>
                         `);
                 }
