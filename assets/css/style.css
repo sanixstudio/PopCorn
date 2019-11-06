@@ -197,16 +197,30 @@ main img {
 .sub-nav {
     visibility: hidden;
     position: absolute;
-    background: rgba(249, 193, 62, 1);
-    padding: 5px 20px 20px 20px;
+    background: #f9c13e;
+    padding: 15px 20px 20px 20px;
     list-style: none;
     left: 15px;
+    margin-left: -10px;
     margin-top: 10px;
     font-size: .8em;
     top: 30px;
+    box-shadow: 0px 0px 10px #000;
     z-index: 100;
-    transform: scale(0);
+    border-radius: 0 10px 10px 10px;
+    transform: rotate(45deg);
     transition: transform ease .3s;
+}
+
+.genre-top {
+    width: 75px;
+    background-color: #f9c13e;
+    margin-left: -20px;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    margin-top: -54px;
+    padding: 10px 10px 10px 12px;
+    font-size: 1.3em;
 }
 
 .sub-nav li {
