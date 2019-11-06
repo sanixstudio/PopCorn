@@ -117,9 +117,17 @@ $(document).ready(function () {
         });
     }
 
+
+    ///////////////////////////////////////////////////////
+    // $('.genre-options').on('click', getMovieByGenre());
+    $('.genre-options').on('click', function () {
+        const genreId = this.getAttribute("data");
+        console.log(genreId);
+    });
+
+
     // get search results
-    function getSearchResults(searchUrl, keyword, containerId) {
-        var genreId;
+    function getMovieByGenre(searchUrl, genreId, containerId) {
 
         $.ajax({
 
