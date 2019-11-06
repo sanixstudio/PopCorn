@@ -120,21 +120,17 @@ $(document).ready(function () {
 
 
     ///////////////////////////////////////////////////////
+    // Get movies by clicking on genre
 
     $('.genre-options').on('click', function () {
         let genreId = parseInt(this.getAttribute("data"));
         $('#each-genre').empty();
 
-
-        // console.log(genreId);
-
         $('#slider').empty();
         $('#posters-container').empty();
 
-
         getMovieByGenre(genreId);
     });
-
 
     // get search results
     function getMovieByGenre(genreId) {
@@ -151,7 +147,7 @@ $(document).ready(function () {
                 let idsArray = each.genre_ids;
 
                 if (idsArray.includes(genreId)) {
-                    $('#each-genre').append(`<div class="results-container text-light">
+                    $('#each-genre').append(`<div class="genre-result results-container text-light">
                             <div class="float-left"><img src="${imgDb + each.poster_path}"></div>
                             <div class="m-title  movie-title">${each.original_title}</div>
                             <div class="m-title movie-popularity">${each.popularity}</div>
