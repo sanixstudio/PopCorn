@@ -5,7 +5,6 @@ $(document).ready(function () {
     let movieName = "";
 
     $(document).on('click', '#logoRating', function () {
-
         clickedBro.push($(document.querySelector("#logoRating")))
         console.log($(document.querySelector("#logoRating")))
     })
@@ -20,6 +19,7 @@ $(document).ready(function () {
         messagingSenderId: "377613950671",
         appId: "1:377613950671:web:890c3f4dd96ea206da21ba"
     };
+
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
@@ -46,7 +46,6 @@ $(document).ready(function () {
     getMoviesData(urlUpcomingMovies, $('#upcomingMovies'));
     getMoviesData(urlTopRatedMovies, $('#topRated'));
 
-
     // get the user input in the search area and search for movies
     $('#searchbox').on('keypress', function (e) {
 
@@ -63,7 +62,6 @@ $(document).ready(function () {
 
             getQueryResultSearch(movieName);
         }
-
     });
 
     // function to get movies by movie name
@@ -91,7 +89,6 @@ $(document).ready(function () {
 
                 $('.search-result').append(searchResults);
                 $('#searchbox').val('');
-
             }
         });
     }
@@ -119,13 +116,13 @@ $(document).ready(function () {
     }
 
 
-    ///////////////////////////////////////////////////////
+    ////////////////////////////////////
     // Get movies by clicking on genre
 
     $('.genre-options').on('click', function () {
         let genreId = parseInt(this.getAttribute("data"));
-        $('#each-genre').empty();
 
+        $('#each-genre').empty();
         $('#slider').empty();
         $('#posters-container').empty();
 
@@ -162,5 +159,32 @@ $(document).ready(function () {
             }
         });
     }
+
+    ///////////////////////////////
+    // About page
+
+    $('#about').on('click', function(){
+        $('#each-genre').empty();
+        $('#slider').empty();
+        $('#posters-container').empty();
+        $('.search-result').empty();
+
+        $('#about2-page').append(`
+            <div class="container-fluid "><main class="container-fluid text-left">
+            <div class="row text-light"><h3 class="cat-title">About Us</h3>
+            <div class="about-us"><h2>Team Members</h2><ul><li>Mathew</li><li>Mohamed</li>
+            <li>Huan</li><li>Adnan</li></ul><p>Hi everyone, this is team PopCorn, a 
+            full-stack developer team based in San Francisco.PopCorn is a modern and faster 
+            project delivery service and quality service provider in the field of WebDesign, 
+            Prototyping, and web-based apps creation. Our team's first member Mohamed handles 
+            the APIs requests, our second team's member Huan handle and controls fireBase
+            data, our third team's member Mathew provides all kind of support during the project
+            completing and our fourth team's member Adnan handle the core design of the project.
+            </p><table><tr><th width="40%">Name</th><th>Email</th></tr><tr><td>Mohamed</td>
+            <td>abc@gmail.com</td></tr><tr><td>Huan</td><td>something@mail.com</td></tr><tr>
+            <td>Mathew</td><td>something@mail.com</td></tr><tr><td>Adnan Niaz</td><td>
+            example@gmail.com</td></tr></table></div></div></main></div>
+        `);
+    });
 
 });
