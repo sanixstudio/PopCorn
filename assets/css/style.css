@@ -59,7 +59,6 @@ body {
 
 .sub-menu {
     visibility: hidden;
-    /* display: none; */
     position: absolute;
     z-index: 11;
     list-style: none;

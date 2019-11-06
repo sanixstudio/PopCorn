@@ -56,10 +56,10 @@ $(document).ready(function () {
             console.log('Hello');
 
             $('#slider').empty();
+            $('#each-genre').empty();
             $('#about2-page').empty();
-            // css('display', 'none');
-            $('#posters-container').css('display', 'none');
-            $('.search-results').css('display', 'unset');
+            $('#posters-container').empty();
+            // $('.search-results').css('display', 'unset');
 
             getQueryResultSearch(movieName);
         }
@@ -166,10 +166,26 @@ $(document).ready(function () {
     // About page
 
     $('#about').on('click', function(){
-        $('#each-genre').empty();
-        $('#slider').empty();
-        $('#posters-container').empty();
-        $('.search-result').empty();
+
+        
+        $('#each-genre').children().fadeOut(500).promise().then(function() {
+            $('#each-genre').empty();
+        });
+
+       
+        $('#slider').children().fadeOut(500).promise().then(function() {
+            $('#slider').empty();
+        });
+
+       
+        $('#posters-container').children().fadeOut(500).promise().then(function() {
+            $('#posters-container').empty();
+        });
+        
+        
+        $('.search-result').children().fadeOut(500).promise().then(function() {
+            $('.search-result').empty();
+        });
 
         $('#about2-page').append(`
             <div class="container-fluid "><main class="container-fluid text-left">
