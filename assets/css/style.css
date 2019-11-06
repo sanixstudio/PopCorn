@@ -43,6 +43,11 @@ body {
     margin-top: 20px;
 }
 
+.m-title {
+    padding: 5px;
+    margin-left: 200px;
+}
+
 .movie-caption {
     background-color: #000;
     opacity: .7;
@@ -66,8 +71,25 @@ body {
     position: relative;
 }
 
+.genre-options {
+    cursor: pointer;
+}
+
 .genre:hover> .sub-menu {
     visibility: visible;
+}
+
+#each-genre {
+    /* border: solid 1px red; */
+    margin-top: 60px;
+}
+
+.genre-result {
+    border: solid 1px rgb(58, 58, 58);
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(100,100,100,.1);
+    overflow: hidden;
 }
 
 main {
@@ -175,10 +197,11 @@ main img {
 .sub-nav {
     visibility: hidden;
     position: absolute;
-    background: rgba(249, 193, 62, .7);
+    background: rgba(249, 193, 62, 1);
     padding: 5px 20px 20px 20px;
     list-style: none;
     left: 15px;
+    margin-top: 10px;
     font-size: .8em;
     top: 30px;
     z-index: 100;
@@ -187,12 +210,14 @@ main img {
 }
 
 .sub-nav li {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     padding: 0 10px;
+    color: #fff;
+    font-size: 1.1em;
 }
 
-.sub-nav a {
-    color: #fff;
+.sub-nav li:hover {
+    text-decoration: underline;;
 }
 
 
