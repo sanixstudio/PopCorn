@@ -56,6 +56,7 @@ $(document).ready(function () {
             console.log('Hello');
 
             $('#slider').empty();
+            $('#about2-page').empty();
             // css('display', 'none');
             $('#posters-container').css('display', 'none');
             $('.search-results').css('display', 'unset');
@@ -125,6 +126,7 @@ $(document).ready(function () {
         $('#each-genre').empty();
         $('#slider').empty();
         $('#posters-container').empty();
+        $('#about2-page').empty();
 
         getMovieByGenre(genreId);
     });
