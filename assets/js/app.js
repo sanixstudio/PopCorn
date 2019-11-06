@@ -40,6 +40,7 @@ $(document).ready(function () {
     const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&api_key=${apiKey}`;
     const urlTopRatedMovies = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=${apiKey}`;
     const urlSearchMovies = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`;
+    const genreUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=action&page=1&include_adult=false`;
 
     getMoviesData(urlNowPlaying, $('#playingNow'));
     getMoviesData(urlUpcomingMovies, $('#upcomingMovies'));
@@ -119,45 +120,39 @@ $(document).ready(function () {
 
 
     ///////////////////////////////////////////////////////
-    // $('.genre-options').on('click', getMovieByGenre());
+
     $('.genre-options').on('click', function () {
-        const genreId = this.getAttribute("data");
-        console.log(genreId);
+        let genreId = parseInt(this.getAttribute("data"));
+
+
+        // console.log(genreId);
+
+        $('#slider').empty();
+        $('#posters-container').empty();
+
+
+        getMovieByGenre(genreId);
     });
 
 
     // get search results
-    function getMovieByGenre(searchUrl, genreId, containerId) {
-
+    function getMovieByGenre(genreId) {
         $.ajax({
 
-            url: searchUrl,
+            url: genreUrl,
             method: 'GET'
 
         }).then(function (_data) {
-
             let results = _data.results;
+            // console.log(results);
 
-            genreId = getGenreId();
+            for (let each of results) {
+                let idsArray = each.genre_ids;
 
-            function getGenreId() {
-                for (let each of results) {
-                    for (let key in each) {
-                        let idsArray = each.genre_ids;
-                        // console.log(each);
-
-                        if (idsArray.includes(keyword)) {
-                            $('.action-movies').append(`<div class="row p-2 text-light">
-                                Original Title: ${each.original_title}<br>
-                                Popularity: ${each.popularity}<br>
-                                Votes Count: ${each.vote_count}<br>
-                                Average Votes: ${each.vote_average}<br>
-                                Overview: ${each.overview};
-                            </div>
-                            `);
-                        }
-                    }
+                if (idsArray.includes(genreId)) {
+                    console.log(idsArray)
                 }
+
             }
         });
     }
