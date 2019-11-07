@@ -128,6 +128,7 @@ $(document).ready(function () {
 
         $('#slider').empty();
         $('#posters-container').empty();
+        $('.search-result').empty();
 
         getMovieByGenre(genreId);
     });
