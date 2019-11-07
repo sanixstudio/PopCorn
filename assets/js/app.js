@@ -145,11 +145,11 @@ $(document).ready(function () {
                     $('#each-genre').append(`<div class="search-title mt-5 text-info each-search-result">
                             <div class="float-left"><img src="${imgDb + each.poster_path}"></div>
                             <div class="m-title pl-5 movie-title">${each.original_title}</div>
-                            <div class="m-title pl-5 movie-popularity">${each.popularity}</div>
-                            <div class="m-title pl-5 movie-vote-count">${each.vote_count}</div>
-                            <div class="m-title pl-5 movie-vote-avg">${each.vote_average}</div>
-                            <div class="m-title pl-5 movie-release-year">${each.release_date}</div>
-                            <div class="m-title pl-5 movie-overview" style="width:50%">${each.overview}</div>
+                            <div class="m-title pl-5 movie-popularity"><span class= "text-light">Popularity:</span> ${each.popularity}</div>
+                            <div class="m-title pl-5 movie-vote-count"><span class= "text-light">Vote Count:</span> ${each.vote_count}</div>
+                            <div class="m-title pl-5 movie-vote-avg"><span class= "text-light">Average Vote:</span> ${each.vote_average}</div>
+                            <div class="m-title pl-5 movie-release-year"><span class= "text-light">Release Date:</span> ${each.release_date}</div>
+                            <div class="m-title pl-5 movie-overview" style="width:50%"><span class= "text-light">Overview:</span> ${each.overview}</div>
                         </div>
                         `);
                 }
@@ -160,7 +160,7 @@ $(document).ready(function () {
 
     // About page
     $('#about').on('click', function () {
-
+      
         $('#each-genre').empty();
         $('#slider').empty();
         $('#posters-container').empty();

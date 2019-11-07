@@ -88,6 +88,7 @@ body {
 
 .each-search-result {
     overflow: hidden;
+    background-color: rgba(50,50,50,0.5);
 }
 
 main {
@@ -123,7 +124,6 @@ main img {
 
 .each-search-result {
     padding: 20px;
-    border-bottom: 1px solid silver;
 }
 
 .search-title {
