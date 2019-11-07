@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     // code test area ----------------------------------------------------------
-    let clickedBro = [];
+    // let clickedBro = [];
     let movieName = "";
 
     $(document).on('click', '#logoRating', function () {
-        clickedBro.push($(document.querySelector("#logoRating")))
+        // clickedBro.push($(document.querySelector("#logoRating")))
         console.log($(document.querySelector("#logoRating")))
     })
 
@@ -107,7 +107,7 @@ $(document).ready(function () {
                 allPosters = results[element].poster_path;
                 let posterImg = `<div>
                         <img class="img-fluid img-thumbnail" src="${imgDb + allPosters}" alt="">
-                        <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" id="logoRating">
+                        <img src="./aeon-favourites-yellow-star-icon-png-clipart.png" alt="" class ="loginstar" id="logoRating">
                         </div>`;
                 $(containerId).append(posterImg);
             }
@@ -160,7 +160,7 @@ $(document).ready(function () {
 
     // About page
     $('#about').on('click', function () {
-        //
+      
         $('#each-genre').empty();
         $('#slider').empty();
         $('#posters-container').empty();
@@ -184,4 +184,78 @@ $(document).ready(function () {
         `);
     });
 
+    $('.login').on('click', function (e) {
+        e.preventDefault();
+        console.log('clicked');
+        $('#each-genre').hide();
+        $('#slider').hide();
+        $('#posters-container').hide();
+        $('.search-result').hide();
+        // $('.btn').hide();
+
+        $('#LoginIn-page').append(`<form id="authlogin>
+        <div class="form-group">
+        <label for="exampleInputEmail1"></label>
+        <input type="username" class="form-control" id="username1" aria-describedby="emailHelp" placeholder="Enter username">
+        <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="password1" placeholder="Enter Password">
+        </div>
+        <button type="submit" class="submitbtn m-1 btn-light">Submit</button>
+        </form>`)
+
+
+        $(document).on('click', '.submitbtn', function (e1) {
+            e1.preventDefault();
+            $('#authlogin').hide();
+            $('.justify-content-center').append(`<button type="button" id="logoutbtn" class="login btn m-1 btn-light">Log Out</button>`)
+        })
+    })
+
+    const auth = firebase.auth()
+
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            console.log('signed in');
+            $('#LoginIn-page').hide();
+            const logoutB = $('.login').attr('id', 'logoutbtn');
+            logoutB.text('Logout');
+            $('#logoutbtn').append(logoutB);
+
+            $('#each-genre').show();
+            $('#slider').show();
+            $('#posters-container').show();
+            $('.search-result').show();
+
+        } else {
+            console.log('signed out');
+            $('#authlogin').show();
+            $('#logoutbtn').empty();
+            $('#each-genre').show();
+            $('#slider').show();
+            $('#posters-container').show();
+            $('.search-result').show();
+        }
+    });
+
+    $(document).on('click', '#logoutbtn', function () {
+        auth.signOut();
+    })
+
+    $('#loginbtn').on('click', function (e) {
+        e.preventDefault();
+        const email = $('#username1').val();
+        const pw = $('#password1').val();
+        auth.signInWithEmailAndPassword(email, pw);
+    })
+
+    document.onkeyup = e => {
+        if (e.key === 'Enter') {
+            auth.signInWithEmailAndPassword('projectcamp1@gmail.com', '123Qwerty!');
+        } else if (e.key === 'Escape') {
+            auth.signOut();
+        }
+    }
 });
