@@ -59,7 +59,6 @@ body {
 
 .sub-menu {
     visibility: hidden;
-    /* display: none; */
     position: absolute;
     z-index: 11;
     list-style: none;
@@ -79,17 +78,17 @@ body {
     visibility: visible;
 }
 
-#each-genre {
-    /* border: solid 1px red; */
-    margin-top: 60px;
-}
-
 .genre-result {
     border: solid 1px rgb(58, 58, 58);
     margin-bottom: 40px;
     padding: 20px;
     background: rgba(100,100,100,.1);
     overflow: hidden;
+}
+
+.each-search-result {
+    overflow: hidden;
+    background-color: rgba(50,50,50,0.5);
 }
 
 main {
@@ -125,7 +124,6 @@ main img {
 
 .each-search-result {
     padding: 20px;
-    border-bottom: 1px solid silver;
 }
 
 .search-title {
@@ -185,7 +183,7 @@ main img {
 }
 
 .nav a {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 .outer-nav {
@@ -197,16 +195,30 @@ main img {
 .sub-nav {
     visibility: hidden;
     position: absolute;
-    background: rgba(249, 193, 62, 1);
-    padding: 5px 20px 20px 20px;
+    background: #f9c13e;
+    padding: 15px 20px 20px 20px;
     list-style: none;
     left: 15px;
+    margin-left: -10px;
     margin-top: 10px;
     font-size: .8em;
     top: 30px;
+    box-shadow: 0px 0px 10px #000;
     z-index: 100;
-    transform: scale(0);
+    border-radius: 0 10px 10px 10px;
+    transform: rotate(45deg);
     transition: transform ease .3s;
+}
+
+.genre-top {
+    width: 75px;
+    background-color: #f9c13e;
+    margin-left: -20px;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    margin-top: -54px;
+    padding: 10px 10px 10px 12px;
+    font-size: 1.3em;
 }
 
 .sub-nav li {
@@ -227,10 +239,49 @@ main img {
     transition: transform ease .3s;
 }
 
-/* 
-    screen-size -> 436px / 437px 
-    screen-size-max -> 1300
-*/
+.movie-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    background-image: url('../images/title.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px;
+}
+
+.movie-popularity {
+    background-image: url('../images/popularity.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
+
+.movie-vote-count {
+    background-image: url('../images/votes_count.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
+
+.movie-release-year {
+    background-image: url('../images/release_year.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
+
+.movie-vote-avg {
+    background-image: url('../images/avg.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
+
+.movie-overview {
+    background-image: url('../images/overview.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
 
 @media only screen and (min-width: 437px) {
     .logo {
