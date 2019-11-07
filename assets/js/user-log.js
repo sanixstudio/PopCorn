@@ -2,8 +2,8 @@ $(document).ready(function () {
 
     $(document).on('click', '#logoRating', function () {
 
-        clickedBro.push($(document.querySelector("#logoRating")))
-        console.log($(document.querySelector("#logoRating")))
+        // clickedBro.push($(document.querySelector("#logoRating")))
+        // console.log($(document.querySelector("#logoRating")))
 
 
         var firebaseConfig = {
@@ -19,6 +19,11 @@ $(document).ready(function () {
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
         const auth = firebase.auth()
+
+
+
+
+
 
 
         auth.onAuthStateChanged(user => {
