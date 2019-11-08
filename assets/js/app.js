@@ -10,7 +10,7 @@ $(document).ready(function () {
     })
 
     //  Firebase data info 
-    var firebaseConfig = {
+    const firebaseConfig = {
         apiKey: "AIzaSyBl3V6CpqPAg1IgJjkyypLhqDhWERQeSuA",
         authDomain: "popcorn-e62a5.firebaseapp.com",
         databaseURL: "https://popcorn-e62a5.firebaseio.com",
@@ -23,6 +23,7 @@ $(document).ready(function () {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
+    const auth = firebase.auth();
 
     db.ref().set('value', snap => {
 
@@ -123,6 +124,8 @@ $(document).ready(function () {
         $('#posters-container').empty();
         $('#about2-page').empty();
         $('.search-result').empty();
+        $('#LoginIn-page').empty();
+
 
         getMovieByGenre(genreId);
     });
@@ -160,7 +163,7 @@ $(document).ready(function () {
 
     // About page
     $('#about').on('click', function () {
-      
+
         $('#each-genre').empty();
         $('#slider').empty();
         $('#posters-container').empty();
@@ -187,34 +190,41 @@ $(document).ready(function () {
     $('.login').on('click', function (e) {
         e.preventDefault();
         console.log('clicked');
-        $('#each-genre').hide();
+        // $('#each-genre').hide();
         $('#slider').hide();
         $('#posters-container').hide();
         $('.search-result').hide();
+        $('#about2-page').hide();
+
         // $('.btn').hide();
 
         $('#LoginIn-page').append(`<form id="authlogin>
         <div class="form-group">
         <label for="exampleInputEmail1"></label>
-        <input type="username" class="form-control" id="username1" aria-describedby="emailHelp" placeholder="Enter username">
+        <input type="username" class="form-control" id="emailText" aria-describedby="emailHelp" placeholder="Enter username">
         <small id="emailHelp" class="form-text text-muted"></small>
         </div>
         <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="password1" placeholder="Enter Password">
+        <input type="password" class="form-control" id="pwText" placeholder="Enter Password">
         </div>
         <button type="submit" class="submitbtn m-1 btn-light">Submit</button>
+        <button type="button" class="btn register m-1 btn-light" id="register">Register</button>
         </form>`)
 
-
-        $(document).on('click', '.submitbtn', function (e1) {
-            e1.preventDefault();
-            $('#authlogin').hide();
-            $('.justify-content-center').append(`<button type="button" id="logoutbtn" class="login btn m-1 btn-light">Log Out</button>`)
-        })
     })
 
-    const auth = firebase.auth()
+    // function to switch login button to logout button - stile seed if function that checks if user logged in---
+    $(document).on('click', '.submitbtn', function (e1) {
+        e1.preventDefault();
+        $('#authlogin').hide();
+        $('.btn').empty();
+        $('.btn').append(`<button type="button" id="logoutbtn" class="login btn m-1 btn-light">Log Out</button>`)
+
+
+    })
+
+
 
     auth.onAuthStateChanged(user => {
         if (user) {
@@ -240,8 +250,13 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on('click', '#logoutbtn', function () {
+    $(document).on('click', '#logoutbtn', function (e2) {
+        e2.preventDefault();
+        $('#authlogin').hide();
+        $('.btn').empty();
+        $('.btn').append(`<button type="button" id="logoutbtn" class="login btn m-1 btn-light">Log In</button>`)
         auth.signOut();
+
     })
 
     $('#loginbtn').on('click', function (e) {
@@ -258,4 +273,22 @@ $(document).ready(function () {
             auth.signOut();
         }
     }
+
+    // register button function
+
+    $('#register').on('click', function (event) {
+        event.preventDefault();
+        const email = $('#emailText').val()
+        const pw = $('#pwText').val()
+
+        console.log(email, pw)
+
+        auth.createUserWithEmailAndPassword(email, pw).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // 
+        });
+
+    });
 });
