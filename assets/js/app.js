@@ -165,7 +165,7 @@ $(document).ready(function () {
 
 
 
-    $(document).on('click', , function (e) {
+    $(document).on('click', function (e) {
         e.preventDefault()
         console.log('hi')
 
