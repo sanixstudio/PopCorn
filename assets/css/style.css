@@ -3,18 +3,17 @@ body {
 }
 
 /* need to be placed in the right place */
-#logoRating{
+#logoRating {
     height: 35px;
     width: 35px;
     position: absolute;
     z-index: 10;
     transform: translateX(-100%);
-    
+
 }
 
-
 /* need to be placed in the right place */
-.posters{
+.posters {
     position: relative;
     z-index: 1;
 }
@@ -44,6 +43,11 @@ body {
     margin-top: 20px;
 }
 
+.m-title {
+    padding: 5px;
+    margin-left: 200px;
+}
+
 .movie-caption {
     background-color: #000;
     opacity: .7;
@@ -55,7 +59,6 @@ body {
 
 .sub-menu {
     visibility: hidden;
-    /* display: none; */
     position: absolute;
     z-index: 11;
     list-style: none;
@@ -67,8 +70,25 @@ body {
     position: relative;
 }
 
+.genre-options {
+    cursor: pointer;
+}
+
 .genre:hover> .sub-menu {
     visibility: visible;
+}
+
+.genre-result {
+    border: solid 1px rgb(58, 58, 58);
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(100,100,100,.1);
+    overflow: hidden;
+}
+
+.each-search-result {
+    overflow: hidden;
+    background-color: rgba(50,50,50,0.5);
 }
 
 main {
@@ -76,8 +96,22 @@ main {
     text-align: center;
 }
 
+.nav-link {
+    color: #777;
+    padding-bottom: 20px;
+    font-size: 18pt;
+
+}
+
 main img {
     margin-bottom: 20px;
+}
+
+.cat-title {
+    color: #1b170d;
+    margin-top: 40px;
+    margin-bottom: -20px;
+    padding: 20px 10px 20px 20px;
 }
 
 .main-results-heading {
@@ -106,10 +140,10 @@ main img {
     margin-bottom: 0;
     background: #f9c13e;
     background: #ffd65e;
-    background: -moz-linear-gradient(top,  #ffd65e 0%, #febf04 100%);
-    background: -webkit-linear-gradient(top,  #ffd65e 0%,#febf04 100%);
-    background: linear-gradient(to bottom,  #ffd65e 0%,#febf04 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 );
+    background: -moz-linear-gradient(top, #ffd65e 0%, #febf04 100%);
+    background: -webkit-linear-gradient(top, #ffd65e 0%, #febf04 100%);
+    background: linear-gradient(to bottom, #ffd65e 0%, #febf04 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd65e', endColorstr='#febf04', GradientType=0);
 }
 
 .images-container {
@@ -117,10 +151,10 @@ main img {
     flex-flow: wrap;
     text-align: center;
     padding: 10px;
-    background: -moz-linear-gradient(top, rgba(249,193,62,1) 0%, rgba(255,255,255,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-    background: linear-gradient(to bottom, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c13e', endColorstr='#00ffffff',GradientType=0 );
+    background: -moz-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9c13e', endColorstr='#00ffffff', GradientType=0);
 }
 
 .images-container div {
@@ -142,51 +176,112 @@ main img {
 .about-us {
     padding: 40px;
     margin-bottom: 60px;
-    background: -moz-linear-gradient(top, rgba(249,193,62,1) 0%, rgba(255,255,255,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-    background: linear-gradient(to bottom, rgba(249,193,62,1) 0%,rgba(255,255,255,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c13e', endColorstr='#00ffffff',GradientType=0 );
+    background: -moz-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(249, 193, 62, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9c13e', endColorstr='#00ffffff', GradientType=0);
+}
+
+.nav a {
+    font-size: 1.1em;
 }
 
 .outer-nav {
     position: relative;
-    transition:visibility 2000ms;
+    transition: visibility 2000ms;
     margin-bottom: 20px;
 }
 
 .sub-nav {
     visibility: hidden;
     position: absolute;
-    background: rgba(249, 193, 62, .7);
-    padding: 5px 20px 20px 20px;
+    background: #f9c13e;
+    padding: 15px 20px 20px 20px;
     list-style: none;
     left: 15px;
+    margin-left: -10px;
+    margin-top: 10px;
     font-size: .8em;
     top: 30px;
+    box-shadow: 0px 0px 10px #000;
     z-index: 100;
-    transform: scale(0);
+    border-radius: 0 10px 10px 10px;
+    transform: rotate(45deg);
     transition: transform ease .3s;
 }
 
-.sub-nav li {
-    margin-bottom: 5px;
-    padding: 0 10px;
-}
-
-.sub-nav a {
+.genre-top {
+    width: 75px;
+    background-color: #f9c13e;
+    margin-left: -20px;
     color: #fff;
+    border-radius: 10px 10px 0 0;
+    margin-top: -54px;
+    padding: 10px 10px 10px 12px;
+    font-size: 1.3em;
 }
 
-.outer-nav:hover > .sub-nav {
+.sub-nav li {
+    margin-bottom: 7px;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.sub-nav li:hover {
+    text-decoration: underline;;
+}
+
+
+.outer-nav:hover>.sub-nav {
     visibility: visible;
     transform: scale(1);
     transition: transform ease .3s;
 }
 
-/* 
-    screen-size -> 436px / 437px 
-    screen-size-max -> 1300
-*/
+.movie-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    background-image: url('../images/title.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px;
+}
+
+.movie-popularity {
+    background-image: url('../images/popularity.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
+
+.movie-vote-count {
+    background-image: url('../images/votes_count.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
+
+.movie-release-year {
+    background-image: url('../images/release_year.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
+
+.movie-vote-avg {
+    background-image: url('../images/avg.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
+
+.movie-overview {
+    background-image: url('../images/overview.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 24px
+}
 
 @media only screen and (min-width: 437px) {
     .logo {
