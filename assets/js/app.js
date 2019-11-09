@@ -78,11 +78,11 @@ $(document).ready(function () {
                     <div class="search-title text-info each-search-result mt-5">
                     <img class="search-img float-left" src="${imgDb + results[pages].poster_path}"></img>
                     <div class="m-title pl-5 movie-title">${results[pages].original_title}</div>
-                    <div class="m-title pl-5 movie-popularity">${Math.round(results[pages].popularity)}</div>
-                    <div class="m-title pl-5 movie-vote-count"> ${results[pages].vote_count}</div>
-                    <div class="m-title pl-5 movie-vote-avg"> ${results[pages].vote_average}</div>
-                    <div class="m-title pl-5 movie-release-year"> ${results[pages].release_date}</div>
-                    <div class="m-title pl-5 movie-overview">${results[pages].overview}</div>
+                    <div class="m-title pl-5 movie-popularity"><span class= "text-light">Popularity:</span> ${Math.round(results[pages].popularity)}</div>
+                    <div class="m-title pl-5 movie-vote-count"><span class= "text-light">Vote Count:</span> ${results[pages].vote_count}</div>
+                    <div class="m-title pl-5 movie-vote-avg"><span class= "text-light">Average Vote:</span> ${results[pages].vote_average}</div>
+                    <div class="m-title pl-5 movie-release-year"><span class= "text-light">Release Date:</span> ${results[pages].release_date}</div>
+                    <div class="m-title pl-5 movie-overview"><span class= "text-light">Overview</span> ${results[pages].overview}</div>
                     </div>
                 `);
                 console.log(results[pages])
