@@ -4,47 +4,33 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>What is Coffee?</title>
+    <title>PopCorn Movies</title>
+    <link rel="icon" href="./assets/images/favicon-16x16.png" type="" sizes="16x16">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" media="all" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/forum.css">
 </head>
 
 <body>
     <header>
-        <div class="container">
+        <div class="container header">
             <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <!-- <li><a href="/blog.html">Blog</a></li> -->
+                <ul class="nav">
+                    <li class="nav-item mt-4"><a class="nav-line" href="index.html">Home</a></li>
                 </ul>
             </nav>
-            <h1><a href="/">PopCorn<strong>Movies</strong></a></h1>
+            <a href="index.html"><img src="./assets/images/logo.png" alt="main logo"></a>
         </div>
     </header>
     <div class="content" data-cms-content-wrapper="/_layouts/default.html">
         <div class="container">
-            <h2 class="spacing">Our Comments Forum</h2>
-
-            <!-- <div class="blog-post spacing">
-                <p class="summary">Information<span class="date">January 01, 2016</span></p>
-                <p>Coffee is a brewed drink prepared from roasted coffee beans, which are the seeds of berries from the
-                    Coffea plant. The Coffea plant is native to subtropical Africa and some islands in southern Asia.
-                    The plant was exported from Africa to countries around the world and coffee plants are now
-                    cultivated in over 70 countries, primarily in the equatorial regions of the Americas, Southeast
-                    Asia, India, and Africa. The two most commonly grown are the highly regarded arabica, and the less
-                    sophisticated but stronger and more hardy robusta. Once ripe, coffee beans are picked, processed,
-                    and dried. Green (unroasted) coffee beans are one of the most traded agricultural commodities in the
-                    world. Once traded, the coffee beans are roasted to varying degrees, depending on the desired
-                    flavor. Roasted beans are ground and brewed to produce coffee as a beverage.</p>
-
-                <p>Source / Read more <a href="https://en.wikipedia.org/wiki/Coffee">Wikipedia</a>.</p> -->
-
-
+            <h2 class="spacing">Comments Section</h2>
             <hr />
             <div class="comments"></div>
 
             <h3>Leave a comment</h3>
-            <form id="comment">
+            <form id="comment" class="pb-5">
                 <label>Message</label>
                 <textarea id="message"></textarea>
 
@@ -62,7 +48,8 @@
     </div>
     <footer>
         <div class="container">
-            <p class="center-text"> <a href="http://cloudcannon.com">&copy;copyright adnanniaz 2019</a></p>
+            <p class="center-text"> <a href="http://cloudcannon.com">&copy;copyright 2019 MAHM (Mohamed, Adnan, Huan &
+                    Mathew)</a></p>
         </div>
     </footer>
     <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>

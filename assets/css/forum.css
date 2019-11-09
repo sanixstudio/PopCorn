@@ -3,7 +3,7 @@
             padding: 0;
             margin: 0;
             font-size: 20px;
-            background: #1D1D1D
+            background: #212324;
         }
 
         p {
@@ -42,11 +42,16 @@
         div.container,
         div.small-container {
             margin: 0 auto;
-            padding: 0 20px
+            padding: 0 20px;
         }
 
         div.container {
-            max-width: 940px
+            max-width: 940px;
+            /* background: #343a40; */
+        }
+
+        .content {
+            /* background: #343a40; */
         }
 
         div.small-container {
@@ -55,7 +60,7 @@
 
         footer,
         header {
-            background: #1D1D1D;
+            /* background: #1D1D1D; */
             color: #fff
         }
 
