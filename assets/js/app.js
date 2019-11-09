@@ -76,7 +76,7 @@ $(document).ready(function () {
             for (let pages in results) {
                 let searchResults = $(`
                     <div class="search-title text-info each-search-result mt-5">
-                    <img class="search-img float-left" src="${imgDb + results[pages].poster_path}"></img>
+                    <img class="search-img float-left img-fluid" src="${imgDb + results[pages].poster_path}"></img>
                     <div class="m-title pl-5 movie-title">${results[pages].original_title}</div>
                     <div class="m-title pl-5 movie-popularity"><span class= "text-light">Popularity:</span> ${Math.round(results[pages].popularity)}</div>
                     <div class="m-title pl-5 movie-vote-count"><span class= "text-light">Vote Count:</span> ${results[pages].vote_count}</div>
@@ -146,7 +146,7 @@ $(document).ready(function () {
 
                 if (idsArray.includes(genreId)) {
                     $('#each-genre').append(`<div class="search-title mt-5 text-info each-search-result">
-                            <div class="float-left"><img src="${imgDb + each.poster_path}"></div>
+                            <img class="float-left img-fluid" src="${imgDb + each.poster_path}">
                             <div class="m-title pl-5 movie-title">${each.original_title}</div>
                             <div class="m-title pl-5 movie-popularity"><span class= "text-light">Popularity:</span> ${each.popularity}</div>
                             <div class="m-title pl-5 movie-vote-count"><span class= "text-light">Vote Count:</span> ${each.vote_count}</div>

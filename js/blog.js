@@ -1,11 +1,11 @@
-$(function() {
-    var ref = new Firebase("https://ucb-2019.firebaseio.com/")
-      , postRef = ref.child(slugify(window.location.pathname));
-    postRef.on("child_added", function(snapshot) {
+$(function () {
+    var ref = new Firebase("https://popcorn-e62a5.firebaseio.com/")
+        , postRef = ref.child(slugify(window.location.pathname));
+    postRef.on("child_added", function (snapshot) {
         var newPost = snapshot.val();
         $(".comments").prepend('<div class="comment">' + "<h4>" + escapeHtml(newPost.name) + "</h4>" + '<div class="profile-image"><img src="http://www.gravatar.com/avatar/' + escapeHtml(newPost.md5Email) + '?s=100&d=retro"/></div> ' + '<span class="date">' + moment(newPost.postedAt).fromNow() + "</span><p>" + escapeHtml(newPost.message) + "</p></div>")
     });
-    $("#comment").submit(function() {
+    $("#comment").submit(function () {
         var a = postRef.push();
         console.log(a);
         a.set({
