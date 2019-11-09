@@ -187,32 +187,32 @@ $(document).ready(function () {
         `);
     });
 
-    $('.login').on('click', function (e) {
-        e.preventDefault();
-        console.log('clicked');
-        // $('#each-genre').hide();
-        $('#slider').hide();
-        $('#posters-container').hide();
-        $('.search-result').hide();
-        $('#about2-page').hide();
+    // $('.login').on('click', function (e) {
+    //     e.preventDefault();
+    //     console.log('clicked');
+    //     // $('#each-genre').hide();
+    //     $('#slider').hide();
+    //     $('#posters-container').hide();
+    //     $('.search-result').hide();
+    //     $('#about2-page').hide();
 
-        // $('.btn').hide();
+    //     // $('.btn').hide();
 
-        $('#LoginIn-page').append(`<form id="authlogin>
-        <div class="form-group">
-        <label for="exampleInputEmail1"></label>
-        <input type="username" class="form-control" id="emailText" aria-describedby="emailHelp" placeholder="Enter username">
-        <small id="emailHelp" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="pwText" placeholder="Enter Password">
-        </div>
-        <button type="submit" class="submitbtn m-1 btn-light">Submit</button>
-        <button type="button" class="btn register m-1 btn-light" id="register">Register</button>
-        </form>`)
+    //     $('#LoginIn-page').append(`<form id="authlogin>
+    //     <div class="form-group">
+    //     <label for="exampleInputEmail1"></label>
+    //     <input type="username" class="form-control" id="emailText" aria-describedby="emailHelp" placeholder="Enter username">
+    //     <small id="emailHelp" class="form-text text-muted"></small>
+    //     </div>
+    //     <div class="form-group">
+    //     <label for="exampleInputPassword1">Password</label>
+    //     <input type="password" class="form-control" id="pwText" placeholder="Enter Password">
+    //     </div>
+    //     <button type="submit" class="submitbtn m-1 btn-light">Submit</button>
+    //     <button type="button" class="btn register m-1 btn-light" id="register">Register</button>
+    //     </form>`)
 
-    })
+    // })
 
     // function to switch login button to logout button - stile seed if function that checks if user logged in---
     $(document).on('click', '.submitbtn', function (e1) {

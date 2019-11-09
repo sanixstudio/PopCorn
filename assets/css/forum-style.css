@@ -1,0 +1,13 @@
+.container {
+    text-align: center;
+    background-color: #eee;
+    width: 500px;
+    box-shadow: 0px 0px 1px #aaa;
+    height: 50vh;
+    padding: 10px;
+    overflow: scroll;
+}
+
+h1 {
+    color: royalblue;
+}

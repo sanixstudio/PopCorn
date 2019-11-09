@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What is Coffee?</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" media="all" />
+    <link rel="stylesheet" href="./assets/css/forum.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <!-- <li><a href="/blog.html">Blog</a></li> -->
+                </ul>
+            </nav>
+            <h1><a href="/">PopCorn<strong>Movies</strong></a></h1>
+        </div>
+    </header>
+    <div class="content" data-cms-content-wrapper="/_layouts/default.html">
+        <div class="container">
+            <h2 class="spacing">Our Comments Forum</h2>
+
+            <!-- <div class="blog-post spacing">
+                <p class="summary">Information<span class="date">January 01, 2016</span></p>
+                <p>Coffee is a brewed drink prepared from roasted coffee beans, which are the seeds of berries from the
+                    Coffea plant. The Coffea plant is native to subtropical Africa and some islands in southern Asia.
+                    The plant was exported from Africa to countries around the world and coffee plants are now
+                    cultivated in over 70 countries, primarily in the equatorial regions of the Americas, Southeast
+                    Asia, India, and Africa. The two most commonly grown are the highly regarded arabica, and the less
+                    sophisticated but stronger and more hardy robusta. Once ripe, coffee beans are picked, processed,
+                    and dried. Green (unroasted) coffee beans are one of the most traded agricultural commodities in the
+                    world. Once traded, the coffee beans are roasted to varying degrees, depending on the desired
+                    flavor. Roasted beans are ground and brewed to produce coffee as a beverage.</p>
+
+                <p>Source / Read more <a href="https://en.wikipedia.org/wiki/Coffee">Wikipedia</a>.</p> -->
+
+
+            <hr />
+            <div class="comments"></div>
+
+            <h3>Leave a comment</h3>
+            <form id="comment">
+                <label>Message</label>
+                <textarea id="message"></textarea>
+
+                <label>Name</label>
+                <input type="text" id="name" />
+
+                <label>Email</label>
+                <input type="text" id="email" />
+
+                <input type="submit" value="Post Comment" />
+            </form>
+        </div>
+    </div>
+
+    </div>
+    <footer>
+        <div class="container">
+            <p class="center-text"> <a href="http://cloudcannon.com">&copy;copyright adnanniaz 2019</a></p>
+        </div>
+    </footer>
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.1.0/js/md5.js"></script>
+    <script src="./js/blog.js"></script>
+</body>
+
+</html>
