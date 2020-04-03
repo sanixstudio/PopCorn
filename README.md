@@ -1,6 +1,6 @@
 # PopCorn Movies
 
-<p>PopCorn Movie Database is an app based on html/css, js/jQuery/Ajax, and API with a little touch to the firebase.<p>
+<p>PopCorn Movie Database is an app that grabs the search results from OMDB API and displays it on the user screen.<p>
 Here you can visit the site
 https://adnanniaz77.github.io/PopCorn/
   
