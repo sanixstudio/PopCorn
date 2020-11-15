@@ -1,15 +1,26 @@
-# PopCorn Movies
+# Overview:
+We all need a place where we can find information about favorite movies, currently playing, upcoming and popular movies. PopCorn movies app provides all this information to read and share with great pleasure.
 
-<p>PopCorn Movie Database is an app that grabs the search results from OMDB API and displays it on the user screen.<p>
-Here you can visit the site
-https://adnanniaz77.github.io/PopCorn/
+## Service Provided by App
+  -  Search for movies in genral
+  -  Search by Genre
+  -  Latest Movies carousel
+  -  On main Display "Playing Now", "Upcoming", "Top-Rated"
   
-# Technologies Used:
+[visit site](https://adnanniaz77.github.io/PopCorn/)
 
-<ul>
-  <li><strong><em>HTML</em></strong> (markup and content for the page)</li>
-  <li><strong><em>CSS</em></strong> (styling the page)</li>
-  <li><strong><em>Javascript</em> / jQuery</strong> (Interactivity)</li>
-  <li><strong><em>Ajax</em></strong> (http GET request)</li>
-  <li><strong><em>API</em></strong> (OMDB API to fetch the data)</li>
-</ul>
+## Snap Shots
+![movies](./assets/images/app_snap.jpg)
+
+## Group Members
+  -  [Adnan Niaz (lead)](https://www.linkedin.com/in/adnanniaz77/)
+  -  [Mohamed Htout](https://www.linkedin.com/in/mohamedhtout/) 
+  -  [Huan Nguyen](https://www.linkedin.com/in/huan-nguyen-8a0ab647/)
+
+## Technologies used:
+  - HTML (Content and DOM)
+  - CSS (Styling)
+  - Responsiveness (Approach)
+  - JS / jQuery (Interactivity)
+  - AJAX (API Call GET/POST)
+  - API [The movie-db](https://www.themoviedb.org/) (Third party API)
