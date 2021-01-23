@@ -1,5 +1,5 @@
 # Overview:
-We all need a place where we can find information about favorite movies, currently playing, upcoming and popular movies. PopCorn movies app provides all this information to read and share with great pleasure.
+We all love movies and TV-shows. PopCorn Moives is a place where you can find information about favorite your movies, currently playing, upcoming and popular movies. This is a collaborative project for our Full-stack developer BootCamp presented as our first project.
 
 ## Service Provided by App
   -  Search for movies in genral
