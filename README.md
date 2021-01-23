@@ -1,5 +1,5 @@
 # Overview:
-We all love movies and TV-shows. PopCorn Moives is a place where you can find information about favorite your movies, currently playing, upcoming and popular movies. This is a collaborative project for our Full-stack developer BootCamp presented as our first project.
+We all love movies and TV-shows. PopCorn Moives is a place where you can find information about your favorite movies, currently playing, upcoming and popular movies. This is a collaborative project for our Full-stack developer UC-Berkley BootCamp presented as our first project.
 
 ## Service Provided by App
   -  Search for movies in genral
